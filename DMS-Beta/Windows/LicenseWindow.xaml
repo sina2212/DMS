@@ -1,0 +1,75 @@
+﻿<Window x:Class="DMS_Beta.Windows.LicenseWindow"
+        xmlns:wpfx="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:pcd="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DMS_Beta.Windows"
+        mc:Ignorable="d" Background="Transparent" AllowsTransparency="True" WindowStyle="None"
+        Title="LicenseWindow" Height="240" Width="475" Loaded="licenseload">
+    <Border Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--#region close window-->
+            <Button Click="Close" BorderThickness="0" Background="Red" materialdesign:ButtonAssist.CornerRadius="10"
+                Height="20" Width="20" Grid.Row="0" HorizontalAlignment="Right" Margin="5"/>
+            <!--#endregion-->
+            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Right">
+                <!--#region code -->
+                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20"
+                    Width="180" HorizontalAlignment="Right" FlowDirection="RightToLeft" Margin="0 10 10 0">
+                    <TextBox x:Name="code" materialdesign:HintAssist.Hint="کد گواهی نامه" Margin="10 0 0 0" TextAlignment="Center"
+                        FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+                </Border>
+                <!--#endregion-->
+                <!--#region license -->
+                <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Margin="0 10 010 0">
+                    <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20"
+                        Width="220" HorizontalAlignment="Right" FlowDirection="RightToLeft">
+                        <TextBox x:Name="name" materialdesign:HintAssist.Hint="نام گواهی نامه" Margin="10 0 0 0" TextAlignment="Center"
+                        FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+                    </Border>
+                    <Border BorderBrush="Gray" CornerRadius="20" Width="220" Margin="10 0 0 0" BorderThickness="1">
+                        <TextBox x:Name="issuer" materialdesign:HintAssist.Hint="صادر کننده" Margin="10 0 0 0" TextAlignment="Center"
+                            FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+                    </Border>
+                </StackPanel>
+                <!--#endregion-->
+                <!--#region date -->
+                <StackPanel Height="35" Orientation="Horizontal" Grid.Row="6" Margin="0 10 10 0" HorizontalAlignment="Right" FlowDirection="RightToLeft">
+                    <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Width="110" HorizontalAlignment="Right" FlowDirection="LeftToRight">
+                        <pcd:PersianDatePicker ToolTip="تاریخ" FontSize="14" x:Name="date" BorderThickness="0" Margin="5 0 0 0"/>
+                    </Border>
+                    <CheckBox Content="قابلیت تمدید" FontSize="18" Margin="20 0 0 0" x:Name="type" Checked="type_Checked" Unchecked="type_Unchecked"/>
+                    <Border Visibility="Visible" x:Name="border" BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Width="110" HorizontalAlignment="Right" FlowDirection="LeftToRight" Margin="20 0 0 0">
+                        <pcd:PersianDatePicker ToolTip="تاریخ انقضاء" FontSize="14" x:Name="exp_date" BorderThickness="0" Margin="5 0 0 0"/>
+                    </Border>
+                </StackPanel>
+                <!--#endregion-->
+                <!--#region BTN and attachment files -->
+                <StackPanel Orientation="Horizontal" Margin="0 10 10 0"
+                    HorizontalAlignment="Right" VerticalAlignment="Top" FlowDirection="RightToLeft">
+                    <TextBlock Text="فایل ضمیمه" FontSize="18"/>
+                    <Button Height="28" Width="28" Margin="10 0 0 0" Click="Add"
+                        BorderThickness="0" Background="#FF008BFF" Style="{StaticResource MaterialDesignIconButton}">
+                        <Button.Content>
+                            <materialdesign:PackIcon Kind="Add" Foreground="White"/>
+                        </Button.Content>
+                    </Button>
+                    <TextBlock Margin="5 0 0 0" FontSize="17" Name="attachlbl" MouseLeftButtonDown="show"/>
+                </StackPanel>
+                <!--#endregion-->
+            </StackPanel>
+            <!--#region button -->
+            <Button x:Name="Save" Content="ذخیره" FontSize="18" VerticalAlignment="Bottom" Grid.Row="1"
+                HorizontalAlignment="Left" materialdesign:ButtonAssist.CornerRadius="5" Margin="20 0 0 10"
+                Background="ForestGreen" BorderThickness="0" Height="35" Width="100" Click="Save_Click"/>
+            <!--#endregion-->
+        </Grid>
+    </Border>
+</Window>

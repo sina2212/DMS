@@ -1,0 +1,68 @@
+﻿<Window x:Class="DMS_Beta.Login"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DMS_Beta"
+        mc:Ignorable="d"
+        Title="Login" Height="450" Width="800"
+        WindowState="Maximized"
+        Loaded="Load"
+        Background="Gray"
+        Name="Loginform"
+        MouseDown="Click"
+        WindowStyle="None" KeyDown="keypress"
+        >
+    <Window.Resources>
+        <Storyboard Name="s1" x:Key="FadeIn" >
+            <DoubleAnimation Duration="0:0:.25" Storyboard.TargetProperty="Opacity" From="0" To="1" />
+        </Storyboard>
+        <Storyboard x:Key="FadeOut">
+            <DoubleAnimation Duration="0:0:.5" Storyboard.TargetProperty="Opacity" To="0" />
+        </Storyboard>
+    </Window.Resources>
+    <Grid>
+        <Image Grid.Row="1" x:Name="myImage" Stretch="Uniform" RenderTransformOrigin="0.5,0.5">
+            <Image.Effect>
+                <BlurEffect Radius="0"/>
+            </Image.Effect>
+        </Image>
+        <Image Grid.Row="1" x:Name="myImage2" Stretch="Uniform" RenderTransformOrigin="0.5,0.5">
+            <Image.Effect>
+                <BlurEffect Radius="0"/>
+            </Image.Effect>
+        </Image>
+        <Grid Height="50" VerticalAlignment="Top" HorizontalAlignment="Right" Width="50">
+            <Button Content="X" Background="Transparent" BorderThickness="0" Height="50"
+                FontWeight="Normal" FontSize="30" FontFamily="Yu Gothic UI Semilight" Click="Close"/>
+        </Grid>
+        <StackPanel VerticalAlignment="Bottom">
+            <Border Grid.Column="0" BorderThickness="1" Margin="100" HorizontalAlignment="Center"
+                Name="loginpanel" CornerRadius="15" Visibility="Hidden" Background="White">
+                <Grid>
+                    <StackPanel Margin="5 5 5 0">
+                        <Border>
+                            <TextBox  Width="200" Height="30" materialDesign:HintAssist.Hint="Username"
+                                FontSize="15" x:Name="txtUsername" Background="White"/>
+                        </Border>
+                        <Border>
+                            <PasswordBox Width="200" Height="30" materialDesign:HintAssist.Hint="Password"
+                                FontSize="15" x:Name="txtPassword" Background="White"/>
+                        </Border>
+                        <Button Content="ورود" Height="30" Width="100" FontSize="16" Margin="10"
+                            Background="{DynamicResource MaterialDesignBody}" Click="login"
+                            BorderBrush="Black" materialDesign:ButtonAssist.CornerRadius="5"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Grid Name="datepanel" Grid.Column="1" Height="150" HorizontalAlignment="Left" Margin="20 0 20 20">
+                <StackPanel Grid.Column="0">
+                    <TextBlock Name="date" Text="mm,dd,yyyy" FontSize="50" Foreground="WhiteSmoke"/>
+                    <TextBlock Name="clock" Text="hh:mm" FontSize="60" Foreground="WhiteSmoke"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+
+    </Grid>
+</Window>

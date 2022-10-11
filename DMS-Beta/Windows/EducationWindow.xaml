@@ -1,0 +1,162 @@
+﻿<Window x:Class="DMS_Beta.Windows.EducationWindow"
+        xmlns:wpfx="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:pcd="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls"
+        xmlns:local="clr-namespace:DMS_Beta.Windows"
+        mc:Ignorable="d" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        Title="EducationWindow" Height="580" Width="410" Loaded="EducationLoad">
+    <Border CornerRadius="5" BorderThickness="1" BorderBrush="Black" Background="White">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="48"/>
+                <RowDefinition Height="48"/>
+                <RowDefinition Height="48"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="48"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="48"/>
+                <RowDefinition Height="48"/>
+                <RowDefinition Height="48"/>
+                <RowDefinition Height="48"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <!--#region close window-->
+            <Button Click="Close" BorderThickness="0" Background="Red" materialdesign:ButtonAssist.CornerRadius="10"
+                Height="20" Width="20" Grid.Row="0" HorizontalAlignment="Right" Margin="5"/>
+            <!--#endregion-->
+
+            <!--#region titile -->
+            <Border Grid.Row="1" BorderThickness="1" BorderBrush="Gray" CornerRadius="20"
+                Width="220" HorizontalAlignment="Right" Margin="0 10 10 0" FlowDirection="RightToLeft">
+                <TextBox x:Name="course" materialdesign:HintAssist.Hint="عنوان دوره آموزشی" Margin="10 0 0 0" TextAlignment="Center"
+                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+            </Border>
+            <!--#endregion-->
+            
+            <!--#region employee -->
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" FlowDirection="RightToLeft" Margin="0 10 10 0">
+                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20"
+                    Width="220" HorizontalAlignment="Right" FlowDirection="RightToLeft">
+                    <TextBox x:Name="fullname" materialdesign:HintAssist.Hint="نام شرکت کننده" Margin="10 0 0 0" TextAlignment="Center"
+                        FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20"
+                    Width="120" HorizontalAlignment="Right" FlowDirection="RightToLeft" Margin="10 0 0 0">
+                    <TextBox x:Name="emp_code" materialdesign:HintAssist.Hint="کد پرسنلی" Margin="10 0 0 0" TextAlignment="Center"
+                        FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+                </Border>
+            </StackPanel>
+            <!--#endregion-->
+            
+            <!--#region oraganization units -->
+            <StackPanel Grid.Row="3" HorizontalAlignment="Right" FlowDirection="RightToLeft" Orientation="Horizontal" Margin="0 10 10 0">
+                <Border BorderThickness="1" Width="200" CornerRadius="5" BorderBrush="Gray" HorizontalAlignment="Left">
+                    <ComboBox x:Name="combo1" Margin="5 0 5 0" Height="33" materialdesign:HintAssist.Hint="واحد سازمانی متقاضی" FontSize="18"/>
+                </Border>
+                <TextBlock x:Name="lbl1" Text="" FontSize="16" Margin="10 0 0 0" TextWrapping="Wrap" TextAlignment="Right"/>
+            </StackPanel>
+            <!--#endregion-->
+            
+            <!--#region education documents -->
+            <StackPanel Orientation="Horizontal" Margin="0 10 10 0" Grid.Row="4" HorizontalAlignment="Right" FlowDirection="RightToLeft">
+                <TextBlock x:Name="documentslbl" Text="جزوه و فایل دوره آموزشی " FontSize="18" MouseLeftButtonDown="show1"/>
+                <Button Height="28" Width="28" Margin="10 0 0 0" Click="Add1"
+                    BorderThickness="0" Background="#FF008BFF" Style="{StaticResource MaterialDesignIconButton}">
+                    <Button.Content>
+                        <materialdesign:PackIcon Kind="Add" Foreground="White"/>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+            <!--#endregion-->
+            
+            <!--#region username password -->
+            <StackPanel Orientation="Horizontal" Grid.Row="5" HorizontalAlignment="Right">
+                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20"
+                    Width="170" HorizontalAlignment="Right" Margin="0 10 10 0" FlowDirection="RightToLeft">
+                    <TextBox x:Name="username" materialdesign:HintAssist.Hint="نام کاربری" Margin="10 0 0 0" TextAlignment="Center"
+                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20"
+                    Width="170" HorizontalAlignment="Right" Margin="0 10 10 0" FlowDirection="RightToLeft">
+                    <TextBox x:Name="password" materialdesign:HintAssist.Hint="رمز عبور" Margin="10 0 0 0" TextAlignment="Center"
+                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+                </Border>
+            </StackPanel>
+            <!--#endregion-->
+            
+            <!--#region begin adn end date -->
+            <StackPanel Orientation="Horizontal" Grid.Row="6" Margin="0 10 10 0" HorizontalAlignment="Right" FlowDirection="RightToLeft">
+                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Grid.Row="5"
+                    Width="110" HorizontalAlignment="Right" FlowDirection="LeftToRight">
+                    <pcd:PersianDatePicker ToolTip="تاریخ شروع دوره" x:Name="begindate" BorderThickness="0" Margin="10 0 0 0"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Grid.Row="5"
+                    Width="110" HorizontalAlignment="Right" FlowDirection="LeftToRight" Margin="20 0 0 0">
+                    <pcd:PersianDatePicker ToolTip="تاریخ پایان دوره" x:Name="enddate" BorderThickness="0" Margin="10 0 0 0"/>
+                </Border>
+            </StackPanel>
+            <!--#endregion-->
+            
+            <!--#region education status -->
+            <Border BorderThickness="1" Grid.Row="7" Width="140" CornerRadius="5" Margin="0 10 10 0"
+                BorderBrush="Gray" HorizontalAlignment="Right" FlowDirection="RightToLeft">
+                <ComboBox x:Name="combo2" Height="33" Margin="5 0 5 0" materialdesign:HintAssist.Hint="وضعیت دوره" FontSize="18">
+                    <TextBlock Text="درحال برگزاری" FontSize="18"/>
+                    <TextBlock Text="تمام شده"/>
+                    <TextBlock Text="شروع نشده"/>
+                </ComboBox>
+            </Border>
+            <!--#endregion-->
+            
+            <!--#region institute -->
+            <Border Grid.Row="8" BorderThickness="1" BorderBrush="Gray" CornerRadius="20"
+                Width="280" HorizontalAlignment="Right" Margin="0 10 10 0" FlowDirection="RightToLeft">
+                <TextBox x:Name="institute" materialdesign:HintAssist.Hint="موسسه ارائه دهتده آموزش" Margin="10 0 0 0" TextAlignment="Center"
+                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+            </Border>
+            <!--#endregion-->
+            
+            <!--#region cost -->
+            <Border BorderThickness="1" Grid.Row="9" BorderBrush="Gray" CornerRadius="20"
+                Width="170" HorizontalAlignment="Right" Margin="0 10 10 0" FlowDirection="RightToLeft">
+                <TextBox x:Name="cost" materialdesign:HintAssist.Hint="هزینه" Margin="10 0 0 0" TextAlignment="Center"
+                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+            </Border>
+            <!--#endregion-->
+            
+            <!--#region goal -->
+            <Border BorderThickness="1" Grid.Row="10" BorderBrush="Gray" CornerRadius="20"
+                Width="280" HorizontalAlignment="Right" Margin="0 10 10 0" FlowDirection="RightToLeft">
+                <TextBox x:Name="goal" materialdesign:HintAssist.Hint="هدف آموزش" Margin="10 0 0 0" TextAlignment="Center"
+                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+            </Border>
+            <!--#endregion-->
+            
+            <!--#region Licens -->
+            <StackPanel Orientation="Horizontal" Margin="0 10 10 0" Grid.Row="11"
+                HorizontalAlignment="Right" VerticalAlignment="Top" FlowDirection="RightToLeft">
+                <TextBlock Text="مدرک دوره" x:Name="licenselbl" FontSize="18" MouseLeftButtonDown="show2"/>
+                <Button Height="28" Width="28" Margin="10 0 0 0" Click="Add2"
+                    BorderThickness="0" Background="#FF008BFF" Style="{StaticResource MaterialDesignIconButton}">
+                    <Button.Content>
+                        <materialdesign:PackIcon Kind="Add" Foreground="White"/>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+            <!--#endregion-->
+            
+            <!--#region button -->
+            <Button x:Name="Save" Content="ذخیره" Margin="20 0 0 20" FontSize="18" VerticalAlignment="Bottom"
+                HorizontalAlignment="Left" materialdesign:ButtonAssist.CornerRadius="5" Grid.Row="11"
+                Background="ForestGreen" BorderThickness="0" Height="35" Width="100" Click="Save_Click"/>
+            <!--#endregion-->
+            
+        </Grid>
+    </Border>
+</Window>

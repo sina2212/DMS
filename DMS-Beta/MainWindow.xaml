@@ -1,0 +1,73 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DMS_Beta"
+        xmlns:y="clr-namespace:DMS_Beta.Pages"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        x:Class="DMS_Beta.MainWindow"
+        mc:Ignorable="d" Loaded="mainload"
+        Title="MainWindow" Height="450" Width="800"
+        WindowStyle="None" WindowState="Maximized"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="White" Height="60" StrokeThickness="0" Grid.Column="0"
+            HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0">
+            <Rectangle.Effect>
+                <DropShadowEffect BlurRadius="10" Direction="270" ShadowDepth="1" Color="#FF494949"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Border x:Name="border" BorderThickness="1" BorderBrush="Black" CornerRadius="25" HorizontalAlignment="Right" Height="50" Margin="5" VerticalAlignment="Center" Width="50" >
+            <Border.Background>
+                <ImageBrush x:Name="cover"/>
+            </Border.Background>
+        </Border>
+        <TextBlock x:Name="textBlock" Text="name" HorizontalAlignment="Right" FontSize="16"
+            Margin="0 0 56 0" TextWrapping="Wrap" VerticalAlignment="Center" Width="89"/>
+        <StackPanel Width="400" Margin="0 7 50 5">
+            <Menu HorizontalAlignment="Right" FlowDirection="RightToLeft">
+                <MenuItem Header="همکاران" Margin="0 0 10 0" Click="Partners"/>
+                <MenuItem Header="وظایف" Margin="0 0 10 0">
+                    <MenuItem Header="منابع انسانی">
+                        <MenuItem Header="فرایند های منابع انسانی" Click="Human_resource_processes">
+                            <MenuItem Header="جذب و استخدام" Click="Hire"/>
+                            <MenuItem Header="خروج از خدمت کارکنان" Click="Fire"/>
+                            <MenuItem Header="استعفا" Click="Resignation"/>
+                            <MenuItem Header="مرخصی" Click="Vacations"/>
+                            <MenuItem Header="فرایند آموزش و توسعه" Click="Training_process"/>
+                        </MenuItem>
+                        <MenuItem Header="پرونده پرسنلی" Click="PersonalFile_"/>
+                        <MenuItem Header="مصاحبه ها" Click="Interviews"/>
+                        <MenuItem Header="آموزش" Click="Education"/>
+                    </MenuItem>
+                    <MenuItem Header="اداری">
+                        <MenuItem Header="مدارک سازمانی">
+                            <MenuItem Header="هیئت مدیره و جواز" Click="Directors_license"/>
+                            <MenuItem Header="گواهی نامه ها و یوزرنیم پسوردها" Click="UserPass_Licenses"/>
+                            <MenuItem Header="نامه ها" Click="Letters"/>
+                        </MenuItem>
+                        <MenuItem Header="آیین نامه ها و دستور العمل ها" Click="Reulation_Construction"/>
+                    </MenuItem>
+                    <MenuItem Header="مدیریت دانش" Click="Knowledge_Management"/>
+                </MenuItem>
+                <MenuItem Header="واحد ها" Margin="0 0 10 0" Click="Departmans"/>
+                <MenuItem Header="اعلانات" Click="Notifications"/>
+            </Menu>
+        </StackPanel>
+        <Grid HorizontalAlignment="Left" Height="50" Width="30" Margin="5">
+            <materialDesign:PopupBox>
+                <StackPanel Height="Auto" Width="Auto">
+                    <Button Content="Account" Height="30" VerticalContentAlignment="Center"/>
+                    <Button Content="Settings" Height="30" VerticalContentAlignment="Center"/>
+                    <Button Content="LogOut" Height="30" VerticalContentAlignment="Center" Click="SignOut"/>
+                </StackPanel>
+            </materialDesign:PopupBox>
+        </Grid>
+        <Frame x:Name="mainframe" NavigationUIVisibility="Hidden" Grid.Column="0" Grid.Row="1"/>
+    </Grid>
+</Window>

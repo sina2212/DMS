@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="DMS_Beta.Styles.PartnersCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DMS_Beta.Styles"
+             mc:Ignorable="d" Loaded="CardLoad"
+             d:DesignHeight="250" d:DesignWidth="160">
+    <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+        <Border BorderThickness="1" BorderBrush="Black" Background="White" CornerRadius="5">
+            <StackPanel Orientation="Vertical" Margin="10">
+                <Border x:Name="border" Width="138" Height="140" BorderThickness="1" BorderBrush="Gray" CornerRadius="5">
+                    <Border.Background>
+                        <ImageBrush x:Name="cover" Stretch="None"/>
+                    </Border.Background>
+                </Border>
+                <TextBlock x:Name="realname" Text="PartnersName" Foreground="Black" FontSize="14" VerticalAlignment="Center" 
+                    HorizontalAlignment="Center" Margin="10"/>
+                <TextBlock x:Name="dep_name" Text="DepartmanName" Foreground="Black" FontSize="14" VerticalAlignment="Center" 
+                    HorizontalAlignment="Center" Margin="10"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,148 @@
+﻿<Window x:Class="DMS_Beta.Windows.InterviewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dragablz="http://dragablz.net/winfx/xaml/dragablz"
+        xmlns:pcd="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls"
+        mc:Ignorable="d" WindowStyle="None" Background="Transparent" AllowsTransparency="True"
+        Title="InterviewWindow" Height="450" Width="800" Loaded="interviewload">
+    <Border Background="White" CornerRadius="5" BorderThickness="1" BorderBrush="Black">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            
+            <!--#region close window-->
+            <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Right" FlowDirection="RightToLeft">
+                <Button Click="Close" BorderThickness="0" Background="Red" materialdesign:ButtonAssist.CornerRadius="10"
+                    Height="20" Width="20" Grid.Row="0" Margin="5"/>
+                <Label HorizontalContentAlignment="Left" Margin="660 0 0 0" HorizontalAlignment="Right" FontSize="18" Foreground="Black" Content="مصاحبه: "/>
+                <Label x:Name="code" HorizontalContentAlignment="Left" Margin="0 0 0 0" HorizontalAlignment="Right" FontSize="18" Foreground="Black"/>
+            </StackPanel>
+            <!--#endregion-->
+            <dragablz:TabablzControl x:Name="tabControl" Grid.Row="1" FontSize="17" FlowDirection="RightToLeft" >
+                <TabItem Header="مشخصات مصاحبه" Background="DodgerBlue" Grid.Row="1">
+                    <Grid Background="Transparent">
+                        <StackPanel Orientation="Vertical">
+                            <!--#region code, fullname, title, code melli-->
+                            <StackPanel Margin="15 40 0 0" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Margin="15 0 0 0">
+                                    <TextBox Name="fullname" materialdesign:HintAssist.Hint="نام و نام خانوادگی"
+                                    Margin="10 0 0 0" TextAlignment="Center" FontSize="20" Width="200" ToolTip="نام و نام خانوادگی"
+                                    BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+                                </Border>
+                                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Margin="15 0 0 0">
+                                    <TextBox Width="200" x:Name="nationalcode" materialdesign:HintAssist.Hint="کد ملی" Margin="10 0 0 0" TextAlignment="Center"
+                                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden" ToolTip="کد ملی"/>
+                                </Border>
+                                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Margin="15 0 0 0">
+                                    <TextBox x:Name="phonenumber" Width="200" materialdesign:HintAssist.Hint="شماره تماس" Margin="10 0 0 0" TextAlignment="Center"
+                                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden" ToolTip="شماره تماس"/>
+                                </Border>
+                            </StackPanel>
+                            <!--#endregion-->
+
+                            <!--#region date, position, resume-->
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40" Margin="0 30 0 0">
+                                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20">
+                                    <TextBox Width="200" x:Name="position" materialdesign:HintAssist.Hint="عنوان شغلی" Margin="10 0 0 0" TextAlignment="Center"
+                                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden" ToolTip="عنوان شغلی"/>
+                                </Border>
+                                <Border BorderThickness="2" BorderBrush="Gray" CornerRadius="20" Margin="20 0 0 0">
+                                    <pcd:PersianDatePicker FontSize="14" ToolTip="تاریخ مصاحبه" x:Name="date" BorderThickness="0" Margin="0 0 10 0"/>
+                                </Border>
+                                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Margin="20 0 0 0" Grid.Row="6" Width="200" HorizontalAlignment="Right">
+                                    <TextBox x:Name="education" materialdesign:HintAssist.Hint="آخرین مدرک تحصیلی" Margin="10 0 0 0" TextAlignment="Center"
+                                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden" ToolTip="مدرک تحصیلی"/>
+                                </Border>
+                                <TextBlock Text="رزومه" Margin="20 0 10 0" FontSize="18" MouseLeftButtonDown="showattachments"/>
+                                <Button Height="30" Width="30" BorderThickness="0" Background="#FF008BFF" Style="{StaticResource MaterialDesignIconButton}" Click="Add">
+                                    <Button.Content>
+                                        <materialdesign:PackIcon Kind="Add" Foreground="White"/>
+                                    </Button.Content>
+                                </Button>
+                            </StackPanel>
+                            <!--#endregion-->
+
+                            <!--#region description-->
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 30 0 0">
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
+                                    <Border VerticalAlignment="Top" BorderThickness="1" CornerRadius="5" Height="35" BorderBrush="Gray">
+                                        <ComboBox x:Name="combo3" materialdesign:HintAssist.Hint="نحوه آشنایی با سازمان" ToolTip="نحوه آشنایی"
+                                        FontSize="18" Width="195" Margin="5 0 5 0" SelectionChanged="combo3_SelectionChanged">
+                                            <ComboBoxItem Content="کارکنان"/>
+                                            <ComboBoxItem Content="آگهی"/>
+                                            <ComboBoxItem Content="سایر"/>
+                                        </ComboBox>
+                                    </Border>
+                                </StackPanel>
+                                <Border x:Name="description" BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Margin="10 0 0 0" Visibility="Hidden">
+                                    <TextBox Width="500" Height="100" materialdesign:HintAssist.Hint="توضیحات" Margin="10 0 0 0"
+                                    TextAlignment="Center" TextWrapping="Wrap" AcceptsReturn="True" FontSize="20" x:Name="descriptiontxt"
+                                    BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+                                </Border>
+                            </StackPanel>
+                            <!--#endregion-->
+
+                            <Button x:Name="Save" Content="ذخیره" Margin="0 40 50 0" FontSize="18" VerticalAlignment="Bottom"
+                                HorizontalAlignment="Right" materialdesign:ButtonAssist.CornerRadius="5"
+                                Background="ForestGreen" BorderThickness="0" Height="35" Width="100" Click="Save_Click"/>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="نتیجه و قرارداد" Background="DodgerBlue" Grid.Row="1">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0 30 0 0">
+                                <TextBlock Text="مصاحبه کنندگان" Margin="20 0 10 0" FontSize="18" />
+                                <Button Height="30" Width="30" BorderThickness="0" Background="#FF008BFF" Style="{StaticResource MaterialDesignIconButton}" Click="SaveInterviewer">
+                                    <Button.Content>
+                                        <materialdesign:PackIcon Kind="Add" Foreground="White"/>
+                                    </Button.Content>
+                                </Button>
+                            </StackPanel>
+                            <Border Margin="10" CornerRadius="5" BorderThickness="1" BorderBrush="Black">
+                                <DataGrid HorizontalAlignment="Left" Height="150" Width="auto"
+                                    x:Name="interviewerstable" VerticalAlignment="Top" RowHeight="38" ColumnWidth="100">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn x:Name="interviewersmname" Width="Auto" Header="نام مصاحبه کننده" Binding="{Binding Name}"/>
+                                        <DataGridTextColumn x:Name="comment" Width="SizeToHeader" Header="نظر" Binding="{Binding Result}"/>
+                                        <DataGridTextColumn x:Name="intro" Width="Auto" Header="توضیحات" Binding="{Binding Comment}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Border>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0 15 0 0">
+                                <CheckBox x:Name="trial" Content="آزمایشی" Margin="20 0 0 0" Checked="checkchange1"/>
+                                <Border BorderThickness="2" Height="35" BorderBrush="Gray" CornerRadius="17" Margin="5 0 0 0">
+                                    <pcd:PersianDatePicker IsEnabled="False" FontSize="14" ToolTip="تاریخ مصاحبه" x:Name="trainingdate" BorderThickness="0" Margin="0 0 10 0"/>
+                                </Border>
+                                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Margin="10 0 0 0">
+                                    <TextBox IsEnabled="False" x:Name="result1" Width="120" materialdesign:HintAssist.Hint="نتیجه" Margin="10 0 0 0" TextAlignment="Center"
+                                        FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+                                </Border>
+                                <CheckBox x:Name="educational" Content="آموزشی" Margin="40 0 0 0" Checked="checkchange2"/>
+                                <Border BorderThickness="2" Height="35" BorderBrush="Gray" CornerRadius="17" Margin="10 0 0 0">
+                                    <pcd:PersianDatePicker IsEnabled="False" FontSize="14" ToolTip="تاریخ مصاحبه" x:Name="educationdate" BorderThickness="0" Margin="0 0 10 0"/>
+                                </Border>
+                                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Margin="10 0 0 0">
+                                    <TextBox IsEnabled="False" x:Name="result2" Width="120" materialdesign:HintAssist.Hint="نتیجه" Margin="10 0 0 0" TextAlignment="Center"
+                                        FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+                                </Border>
+                            </StackPanel>
+                            <Button x:Name="InterviewItem" Content="ذخیره" Margin="0 20 40 0" FontSize="18" VerticalAlignment="Bottom"
+                                HorizontalAlignment="Right" materialdesign:ButtonAssist.CornerRadius="5"
+                                Background="ForestGreen" BorderThickness="0" Height="35" Width="100" Click="SaveInterviewItem"/>
+                        </StackPanel>
+                        <StackPanel x:Name="childstack" LayoutUpdated="layoutupdate">
+
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+            </dragablz:TabablzControl>
+
+        </Grid>
+    </Border>
+</Window>

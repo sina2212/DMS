@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="DMS_Beta.Styles.ChoosingEmployee"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:DMS_Beta.Styles"
+             mc:Ignorable="d" Background="White" Loaded="ChoosingEmployeeload"
+             d:DesignHeight="40" d:DesignWidth="210">
+    <Grid Height="40" Width="210">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="35"/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="25"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="name" Grid.Column="0" Text="employee name" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="code" Grid.Column="1" Text="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <materialdesign:PackIcon x:Name="icon1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Kind="Check" MouseLeftButtonDown="Chooseing"/>
+        <materialdesign:PackIcon x:Name="icon2" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Kind="Close" MouseLeftButtonDown="Cancel"/>
+    </Grid>
+</UserControl>

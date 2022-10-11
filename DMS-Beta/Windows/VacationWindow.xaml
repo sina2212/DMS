@@ -1,0 +1,81 @@
+﻿<Window x:Class="DMS_Beta.Windows.VacationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:pcd="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls"
+        xmlns:local="clr-namespace:DMS_Beta.Windows"
+        xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:wpfx="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d" Height="300 " Width="600" Background="Transparent"
+        Title="VacationWindow" WindowStyle="None" AllowsTransparency="True">
+    <Border BorderBrush="Black" BorderThickness="1" CornerRadius="5" Background="White">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="0.2*"/>
+            </Grid.RowDefinitions>
+            <!--#region close window-->
+            <Button Click="Close" BorderThickness="0" Background="Red" materialdesign:ButtonAssist.CornerRadius="15"
+                Height="20" Width="20" Grid.Row="0" HorizontalAlignment="Right" Margin="5"/>
+            <!--#endregion-->
+            <StackPanel Grid.Row="1" Margin="0 10 0 5" Orientation="Horizontal" HorizontalAlignment="Right" FlowDirection="RightToLeft">
+                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20"
+                    Width="120" HorizontalAlignment="Right" FlowDirection="RightToLeft" Margin="10 0 0 0">
+                    <TextBox x:Name="code" materialdesign:HintAssist.Hint="شماره" Margin="10 0 0 0" TextAlignment="Center"
+                        FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden" IsReadOnly="True"/>
+                </Border>
+                <Separator Width="350" Background="White"/>
+                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Grid.Row="5"
+                    Width="110" HorizontalAlignment="Left" FlowDirection="LeftToRight">
+                    <wpfx:MaskedTextBox Mask="0000/00/00" Margin="5" FontSize="19" x:Name="date"
+                        TextAlignment="Left" CaretIndex="0" BorderThickness="0" ToolTip="تاریخ"/>
+                </Border>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Orientation="Vertical" VerticalAlignment="Center" Margin="10">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" FlowDirection="RightToLeft">
+                    <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20"
+                        Width="220" HorizontalAlignment="Right" FlowDirection="RightToLeft">
+                        <TextBox x:Name="fullname" materialdesign:HintAssist.Hint="نام درخواست کننده" Margin="10 0 0 0" TextAlignment="Center"
+                            FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+                    </Border>
+                    <Border BorderThickness="1" Width="200" CornerRadius="5" Margin="20 0 0 0" BorderBrush="Gray" HorizontalAlignment="Left">
+                        <ComboBox x:Name="combo1" Margin="5 0 5 0" Height="33" materialdesign:HintAssist.Hint="مشغول در واحد" FontSize="18">
+                            <TextBlock Text="BI"/>
+                            <TextBlock Text="Active"/>
+                            <TextBlock Text="Passive"/>
+                            <TextBlock Text="فروش و اداری"/>
+                            <TextBlock Text="مدیریت"/>
+                        </ComboBox>
+                    </Border>
+                </StackPanel>
+                <StackPanel Margin="0 10 0 0" Orientation="Horizontal" HorizontalAlignment="Right" FlowDirection="RightToLeft">
+                    <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Margin="0 0 0 0"
+                        Width="120" HorizontalAlignment="Right" FlowDirection="RightToLeft">
+                        <TextBox x:Name="duration" materialdesign:HintAssist.Hint="مدت" Margin="10 0 0 0" TextAlignment="Center"
+                            FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+                    </Border>
+                    <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Grid.Row="5"
+                        Width="150" HorizontalAlignment="Left" FlowDirection="LeftToRight" Margin="10 0 0 0">
+                        <pcd:PersianDatePicker ToolTip="از تاریخ" x:Name="fromdate" BorderThickness="0" Margin="10 0 0 0"/>
+                    </Border>
+                    <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Grid.Row="5"
+                        Width="150" HorizontalAlignment="Left" FlowDirection="LeftToRight" Margin="10 0 0 0">
+                        <pcd:PersianDatePicker ToolTip="تا تاریخ" x:Name="todate" BorderThickness="0" Margin="10 0 0 0"/>
+                    </Border>
+                    <Border BorderThickness="1" Width="100" CornerRadius="5" Margin="20 0 0 0" BorderBrush="Gray" HorizontalAlignment="Left">
+                        <ComboBox x:Name="status" Margin="5 0 5 0" Height="33" materialdesign:HintAssist.Hint="وضعیت" FontSize="18">
+                            <TextBlock Text="تایید شد"/>
+                            <TextBlock Text="تایید نشد"/>
+                        </ComboBox>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+            <Button x:Name="Save" Content="ذخیره" Margin="20 0 0 20" FontSize="18" VerticalAlignment="Bottom"
+                HorizontalAlignment="Left" materialdesign:ButtonAssist.CornerRadius="5" Grid.Row="11"
+                Background="ForestGreen" BorderThickness="0" Height="35" Width="100" Click="Save_Click"/>
+        </Grid>
+    </Border>
+</Window>

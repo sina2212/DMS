@@ -1,0 +1,936 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="_DMS_rasaDataSet" targetNamespace="http://tempuri.org/_DMS_rasaDataSet.xsd" xmlns:mstns="http://tempuri.org/_DMS_rasaDataSet.xsd" xmlns="http://tempuri.org/_DMS_rasaDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DMS_rasaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DMS_rasaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DMS_Beta.Properties.Settings.GlobalReference.Default.DMS_rasaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="departmansfiles_viewTableAdapter" GeneratorDataComponentClassName="departmansfiles_viewTableAdapter" Name="departmansfiles_view" UserDataComponentName="departmansfiles_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DMS_rasaConnectionString (Settings)" DbObjectName="[DMS-rasa].dbo.departmansfiles_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT filename, filelocation, categoryid, category, subcategory, number, name, departman_ref, realname, code FROM dbo.departmansfiles_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="filename" DataSetColumn="filename" />
+              <Mapping SourceColumn="filelocation" DataSetColumn="filelocation" />
+              <Mapping SourceColumn="categoryid" DataSetColumn="categoryid" />
+              <Mapping SourceColumn="category" DataSetColumn="category" />
+              <Mapping SourceColumn="subcategory" DataSetColumn="subcategory" />
+              <Mapping SourceColumn="number" DataSetColumn="number" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+              <Mapping SourceColumn="departman_ref" DataSetColumn="departman_ref" />
+              <Mapping SourceColumn="realname" DataSetColumn="realname" />
+              <Mapping SourceColumn="code" DataSetColumn="code" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="empauth_viewTableAdapter" GeneratorDataComponentClassName="empauth_viewTableAdapter" Name="empauth_view" UserDataComponentName="empauth_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DMS_rasaConnectionString (Settings)" DbObjectName="[DMS-rasa].dbo.empauth_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT realname, number, username, password, name, job, position FROM dbo.empauth_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="realname" DataSetColumn="realname" />
+              <Mapping SourceColumn="number" DataSetColumn="number" />
+              <Mapping SourceColumn="username" DataSetColumn="username" />
+              <Mapping SourceColumn="password" DataSetColumn="password" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+              <Mapping SourceColumn="job" DataSetColumn="job" />
+              <Mapping SourceColumn="position" DataSetColumn="position" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="employee_viewTableAdapter" GeneratorDataComponentClassName="employee_viewTableAdapter" Name="employee_view" UserDataComponentName="employee_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DMS_rasaConnectionString (Settings)" DbObjectName="[DMS-rasa].dbo.employee_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT realname, singel, gender, child, education, birthdate, name, number, job, position FROM dbo.employee_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="realname" DataSetColumn="realname" />
+              <Mapping SourceColumn="singel" DataSetColumn="singel" />
+              <Mapping SourceColumn="gender" DataSetColumn="gender" />
+              <Mapping SourceColumn="child" DataSetColumn="child" />
+              <Mapping SourceColumn="education" DataSetColumn="education" />
+              <Mapping SourceColumn="birthdate" DataSetColumn="birthdate" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+              <Mapping SourceColumn="number" DataSetColumn="number" />
+              <Mapping SourceColumn="job" DataSetColumn="job" />
+              <Mapping SourceColumn="position" DataSetColumn="position" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="interview_viewTableAdapter" GeneratorDataComponentClassName="interview_viewTableAdapter" Name="interview_view" UserDataComponentName="interview_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DMS_rasaConnectionString (Settings)" DbObjectName="[DMS-rasa].dbo.interview_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Expr1, realname, education, interviewer, result, introductiontype, training, training_date, position, interviewdate FROM dbo.interview_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="realname" DataSetColumn="realname" />
+              <Mapping SourceColumn="education" DataSetColumn="education" />
+              <Mapping SourceColumn="interviewer" DataSetColumn="interviewer" />
+              <Mapping SourceColumn="result" DataSetColumn="result" />
+              <Mapping SourceColumn="introductiontype" DataSetColumn="introductiontype" />
+              <Mapping SourceColumn="training" DataSetColumn="training" />
+              <Mapping SourceColumn="training_date" DataSetColumn="training_date" />
+              <Mapping SourceColumn="position" DataSetColumn="position" />
+              <Mapping SourceColumn="interviewdate" DataSetColumn="interviewdate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="knowledge_viewTableAdapter" GeneratorDataComponentClassName="knowledge_viewTableAdapter" Name="knowledge_view" UserDataComponentName="knowledge_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DMS_rasaConnectionString (Settings)" DbObjectName="[DMS-rasa].dbo.knowledge_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, course_name, departmanname, institute, begindate, enddate, goal, cost, state, username, password, realname, emp_code FROM dbo.knowledge_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="course_name" DataSetColumn="course_name" />
+              <Mapping SourceColumn="departmanname" DataSetColumn="departmanname" />
+              <Mapping SourceColumn="institute" DataSetColumn="institute" />
+              <Mapping SourceColumn="begindate" DataSetColumn="begindate" />
+              <Mapping SourceColumn="enddate" DataSetColumn="enddate" />
+              <Mapping SourceColumn="goal" DataSetColumn="goal" />
+              <Mapping SourceColumn="cost" DataSetColumn="cost" />
+              <Mapping SourceColumn="state" DataSetColumn="state" />
+              <Mapping SourceColumn="username" DataSetColumn="username" />
+              <Mapping SourceColumn="password" DataSetColumn="password" />
+              <Mapping SourceColumn="realname" DataSetColumn="realname" />
+              <Mapping SourceColumn="emp_code" DataSetColumn="emp_code" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="knowledgemanagment_viewTableAdapter" GeneratorDataComponentClassName="knowledgemanagment_viewTableAdapter" Name="knowledgemanagment_view" UserDataComponentName="knowledgemanagment_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DMS_rasaConnectionString (Settings)" DbObjectName="[DMS-rasa].dbo.knowledgemanagment_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, realname, number, description, keyword, date_, organization, position, name, departman_ref FROM dbo.knowledgemanagment_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="realname" DataSetColumn="realname" />
+              <Mapping SourceColumn="number" DataSetColumn="number" />
+              <Mapping SourceColumn="description" DataSetColumn="description" />
+              <Mapping SourceColumn="keyword" DataSetColumn="keyword" />
+              <Mapping SourceColumn="date_" DataSetColumn="date_" />
+              <Mapping SourceColumn="organization" DataSetColumn="organization" />
+              <Mapping SourceColumn="position" DataSetColumn="position" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+              <Mapping SourceColumn="departman_ref" DataSetColumn="departman_ref" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="letters_viewTableAdapter" GeneratorDataComponentClassName="letters_viewTableAdapter" Name="letters_view" UserDataComponentName="letters_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DMS_rasaConnectionString (Settings)" DbObjectName="[DMS-rasa].dbo.letters_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, subject, organ, date, type, senderorreciever, answer, name FROM dbo.letters_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="subject" DataSetColumn="subject" />
+              <Mapping SourceColumn="organ" DataSetColumn="organ" />
+              <Mapping SourceColumn="date" DataSetColumn="date" />
+              <Mapping SourceColumn="type" DataSetColumn="type" />
+              <Mapping SourceColumn="senderorreciever" DataSetColumn="senderorreciever" />
+              <Mapping SourceColumn="answer" DataSetColumn="answer" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="managers_viewTableAdapter" GeneratorDataComponentClassName="managers_viewTableAdapter" Name="managers_view" UserDataComponentName="managers_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DMS_rasaConnectionString (Settings)" DbObjectName="[DMS-rasa].dbo.managers_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT realname FROM dbo.managers_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="realname" DataSetColumn="realname" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="userpass_viewTableAdapter" GeneratorDataComponentClassName="userpass_viewTableAdapter" Name="userpass_view" UserDataComponentName="userpass_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DMS_rasaConnectionString (Settings)" DbObjectName="[DMS-rasa].dbo.userpass_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, username, password, title, title_id FROM dbo.userpass_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="username" DataSetColumn="username" />
+              <Mapping SourceColumn="password" DataSetColumn="password" />
+              <Mapping SourceColumn="title" DataSetColumn="title" />
+              <Mapping SourceColumn="title_id" DataSetColumn="title_id" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="KnowledgeManagementTableAdapter" GeneratorDataComponentClassName="KnowledgeManagementTableAdapter" Name="KnowledgeManagement" UserDataComponentName="KnowledgeManagementTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DMS_rasaConnectionString (Settings)" DbObjectName="[DMS-rasa].dbo.KnowledgeManagement" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[KnowledgeManagement] WHERE (([ID] = @Original_ID) AND ((@IsNull_keyword = 1 AND [keyword] IS NULL) OR ([keyword] = @Original_keyword)) AND ((@IsNull_date_ = 1 AND [date_] IS NULL) OR ([date_] = @Original_date_)) AND ((@IsNull_organization = 1 AND [organization] IS NULL) OR ([organization] = @Original_organization)) AND ((@IsNull_creatby = 1 AND [creatby] IS NULL) OR ([creatby] = @Original_creatby)) AND ((@IsNull_creator = 1 AND [creator] IS NULL) OR ([creator] = @Original_creator)) AND ((@IsNull_creationdate = 1 AND [creationdate] IS NULL) OR ([creationdate] = @Original_creationdate)) AND ((@IsNull_modifier = 1 AND [modifier] IS NULL) OR ([modifier] = @Original_modifier)) AND ((@IsNull_lastmodifieddate = 1 AND [lastmodifieddate] IS NULL) OR ([lastmodifieddate] = @Original_lastmodifieddate)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int64" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="BigInt" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_keyword" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="keyword" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_keyword" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="keyword" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_date_" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="date_" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_date_" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="date_" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_organization" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="organization" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_organization" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="organization" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_creatby" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="creatby" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_creatby" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="creatby" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_creator" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="creator" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_creator" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="creator" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_creationdate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="creationdate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_creationdate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="creationdate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_modifier" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="modifier" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_modifier" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="modifier" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_lastmodifieddate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="lastmodifieddate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_lastmodifieddate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="lastmodifieddate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[KnowledgeManagement] ([description], [keyword], [date_], [organization], [creatby], [creator], [creationdate], [modifier], [lastmodifieddate]) VALUES (@description, @keyword, @date_, @organization, @creatby, @creator, @creationdate, @modifier, @lastmodifieddate);
+SELECT ID, description, keyword, date_, organization, creatby, creator, creationdate, modifier, lastmodifieddate FROM KnowledgeManagement WHERE (ID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@description" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@keyword" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="keyword" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@date_" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="date_" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@organization" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="organization" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@creatby" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="creatby" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@creator" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="creator" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@creationdate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="creationdate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@modifier" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="modifier" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@lastmodifieddate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="lastmodifieddate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, description, keyword, date_, organization, creatby, creator, creationdate, modifier, lastmodifieddate FROM dbo.KnowledgeManagement</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[KnowledgeManagement] SET [description] = @description, [keyword] = @keyword, [date_] = @date_, [organization] = @organization, [creatby] = @creatby, [creator] = @creator, [creationdate] = @creationdate, [modifier] = @modifier, [lastmodifieddate] = @lastmodifieddate WHERE (([ID] = @Original_ID) AND ((@IsNull_keyword = 1 AND [keyword] IS NULL) OR ([keyword] = @Original_keyword)) AND ((@IsNull_date_ = 1 AND [date_] IS NULL) OR ([date_] = @Original_date_)) AND ((@IsNull_organization = 1 AND [organization] IS NULL) OR ([organization] = @Original_organization)) AND ((@IsNull_creatby = 1 AND [creatby] IS NULL) OR ([creatby] = @Original_creatby)) AND ((@IsNull_creator = 1 AND [creator] IS NULL) OR ([creator] = @Original_creator)) AND ((@IsNull_creationdate = 1 AND [creationdate] IS NULL) OR ([creationdate] = @Original_creationdate)) AND ((@IsNull_modifier = 1 AND [modifier] IS NULL) OR ([modifier] = @Original_modifier)) AND ((@IsNull_lastmodifieddate = 1 AND [lastmodifieddate] IS NULL) OR ([lastmodifieddate] = @Original_lastmodifieddate)));
+SELECT ID, description, keyword, date_, organization, creatby, creator, creationdate, modifier, lastmodifieddate FROM KnowledgeManagement WHERE (ID = @ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@description" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@keyword" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="keyword" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@date_" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="date_" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@organization" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="organization" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@creatby" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="creatby" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@creator" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="creator" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@creationdate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="creationdate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@modifier" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="modifier" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@lastmodifieddate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="lastmodifieddate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int64" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="BigInt" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_keyword" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="keyword" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_keyword" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="keyword" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_date_" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="date_" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_date_" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="date_" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_organization" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="organization" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_organization" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="organization" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_creatby" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="creatby" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_creatby" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="creatby" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_creator" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="creator" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_creator" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="creator" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_creationdate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="creationdate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_creationdate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="creationdate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_modifier" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="modifier" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_modifier" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="modifier" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_lastmodifieddate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="lastmodifieddate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_lastmodifieddate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="lastmodifieddate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID" DataSourceName="[DMS-rasa].dbo.KnowledgeManagement" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="BigInt" Scale="0" Size="8" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="description" DataSetColumn="description" />
+              <Mapping SourceColumn="keyword" DataSetColumn="keyword" />
+              <Mapping SourceColumn="date_" DataSetColumn="date_" />
+              <Mapping SourceColumn="organization" DataSetColumn="organization" />
+              <Mapping SourceColumn="creatby" DataSetColumn="creatby" />
+              <Mapping SourceColumn="creator" DataSetColumn="creator" />
+              <Mapping SourceColumn="creationdate" DataSetColumn="creationdate" />
+              <Mapping SourceColumn="modifier" DataSetColumn="modifier" />
+              <Mapping SourceColumn="lastmodifieddate" DataSetColumn="lastmodifieddate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="license_viewTableAdapter" GeneratorDataComponentClassName="license_viewTableAdapter" Name="license_view" UserDataComponentName="license_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DMS_rasaConnectionString (Settings)" DbObjectName="[DMS-rasa].dbo.license_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, number, name, issuer, issudate, expiredate, type FROM dbo.license_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="number" DataSetColumn="number" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+              <Mapping SourceColumn="issuer" DataSetColumn="issuer" />
+              <Mapping SourceColumn="issudate" DataSetColumn="issudate" />
+              <Mapping SourceColumn="expiredate" DataSetColumn="expiredate" />
+              <Mapping SourceColumn="type" DataSetColumn="type" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DepartmansTableAdapter" GeneratorDataComponentClassName="DepartmansTableAdapter" Name="Departmans" UserDataComponentName="DepartmansTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DMS_rasaConnectionString (Settings)" DbObjectName="[DMS-rasa].dbo.Departmans" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Departmans] ([name]) VALUES (@name)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT name FROM dbo.Departmans</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vacation_viewTableAdapter" GeneratorDataComponentClassName="vacation_viewTableAdapter" Name="vacation_view" UserDataComponentName="vacation_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DMS_rasaConnectionString (Settings)" DbObjectName="[DMS-rasa].dbo.vacation_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, realname, emp_ref, name, dep_ref, type, duration, fromdate, todate, date_, status FROM dbo.vacation_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="realname" DataSetColumn="realname" />
+              <Mapping SourceColumn="emp_ref" DataSetColumn="emp_ref" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+              <Mapping SourceColumn="dep_ref" DataSetColumn="dep_ref" />
+              <Mapping SourceColumn="type" DataSetColumn="type" />
+              <Mapping SourceColumn="duration" DataSetColumn="duration" />
+              <Mapping SourceColumn="fromdate" DataSetColumn="fromdate" />
+              <Mapping SourceColumn="todate" DataSetColumn="todate" />
+              <Mapping SourceColumn="date_" DataSetColumn="date_" />
+              <Mapping SourceColumn="status" DataSetColumn="status" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="_DMS_rasaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_DMS_rasaDataSet" msprop:Generator_UserDSName="_DMS_rasaDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="departmansfiles_view" msprop:Generator_TableClassName="departmansfiles_viewDataTable" msprop:Generator_TableVarName="tabledepartmansfiles_view" msprop:Generator_RowChangedName="departmansfiles_viewRowChanged" msprop:Generator_TablePropName="departmansfiles_view" msprop:Generator_RowDeletingName="departmansfiles_viewRowDeleting" msprop:Generator_RowChangingName="departmansfiles_viewRowChanging" msprop:Generator_RowEvHandlerName="departmansfiles_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="departmansfiles_viewRowDeleted" msprop:Generator_RowClassName="departmansfiles_viewRow" msprop:Generator_UserTableName="departmansfiles_view" msprop:Generator_RowEvArgName="departmansfiles_viewRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="filename" msprop:Generator_ColumnVarNameInTable="columnfilename" msprop:Generator_ColumnPropNameInRow="filename" msprop:Generator_ColumnPropNameInTable="filenameColumn" msprop:Generator_UserColumnName="filename" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="filelocation" msprop:Generator_ColumnVarNameInTable="columnfilelocation" msprop:Generator_ColumnPropNameInRow="filelocation" msprop:Generator_ColumnPropNameInTable="filelocationColumn" msprop:Generator_UserColumnName="filelocation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="categoryid" msprop:Generator_ColumnVarNameInTable="columncategoryid" msprop:Generator_ColumnPropNameInRow="categoryid" msprop:Generator_ColumnPropNameInTable="categoryidColumn" msprop:Generator_UserColumnName="categoryid" type="xs:long" minOccurs="0" />
+              <xs:element name="category" msprop:Generator_ColumnVarNameInTable="columncategory" msprop:Generator_ColumnPropNameInRow="category" msprop:Generator_ColumnPropNameInTable="categoryColumn" msprop:Generator_UserColumnName="category" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="subcategory" msprop:Generator_ColumnVarNameInTable="columnsubcategory" msprop:Generator_ColumnPropNameInRow="subcategory" msprop:Generator_ColumnPropNameInTable="subcategoryColumn" msprop:Generator_UserColumnName="subcategory" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="number" msprop:Generator_ColumnVarNameInTable="columnnumber" msprop:Generator_ColumnPropNameInRow="number" msprop:Generator_ColumnPropNameInTable="numberColumn" msprop:Generator_UserColumnName="number" type="xs:int" minOccurs="0" />
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="departman_ref" msprop:Generator_ColumnVarNameInTable="columndepartman_ref" msprop:Generator_ColumnPropNameInRow="departman_ref" msprop:Generator_ColumnPropNameInTable="departman_refColumn" msprop:Generator_UserColumnName="departman_ref" type="xs:int" minOccurs="0" />
+              <xs:element name="realname" msprop:Generator_ColumnVarNameInTable="columnrealname" msprop:Generator_ColumnPropNameInRow="realname" msprop:Generator_ColumnPropNameInTable="realnameColumn" msprop:Generator_UserColumnName="realname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="code" msprop:Generator_ColumnVarNameInTable="columncode" msprop:Generator_ColumnPropNameInRow="code" msprop:Generator_ColumnPropNameInTable="codeColumn" msprop:Generator_UserColumnName="code" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="empauth_view" msprop:Generator_TableClassName="empauth_viewDataTable" msprop:Generator_TableVarName="tableempauth_view" msprop:Generator_RowChangedName="empauth_viewRowChanged" msprop:Generator_TablePropName="empauth_view" msprop:Generator_RowDeletingName="empauth_viewRowDeleting" msprop:Generator_RowChangingName="empauth_viewRowChanging" msprop:Generator_RowEvHandlerName="empauth_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="empauth_viewRowDeleted" msprop:Generator_RowClassName="empauth_viewRow" msprop:Generator_UserTableName="empauth_view" msprop:Generator_RowEvArgName="empauth_viewRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="realname" msprop:Generator_ColumnVarNameInTable="columnrealname" msprop:Generator_ColumnPropNameInRow="realname" msprop:Generator_ColumnPropNameInTable="realnameColumn" msprop:Generator_UserColumnName="realname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="number" msprop:Generator_ColumnVarNameInTable="columnnumber" msprop:Generator_ColumnPropNameInRow="number" msprop:Generator_ColumnPropNameInTable="numberColumn" msprop:Generator_UserColumnName="number" type="xs:int" minOccurs="0" />
+              <xs:element name="username" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_UserColumnName="username" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="password" msprop:Generator_ColumnVarNameInTable="columnpassword" msprop:Generator_ColumnPropNameInRow="password" msprop:Generator_ColumnPropNameInTable="passwordColumn" msprop:Generator_UserColumnName="password" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="job" msprop:Generator_ColumnVarNameInTable="columnjob" msprop:Generator_ColumnPropNameInRow="job" msprop:Generator_ColumnPropNameInTable="jobColumn" msprop:Generator_UserColumnName="job" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="position" msprop:Generator_ColumnVarNameInTable="columnposition" msprop:Generator_ColumnPropNameInRow="position" msprop:Generator_ColumnPropNameInTable="positionColumn" msprop:Generator_UserColumnName="position" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="employee_view" msprop:Generator_TableClassName="employee_viewDataTable" msprop:Generator_TableVarName="tableemployee_view" msprop:Generator_RowChangedName="employee_viewRowChanged" msprop:Generator_TablePropName="employee_view" msprop:Generator_RowDeletingName="employee_viewRowDeleting" msprop:Generator_RowChangingName="employee_viewRowChanging" msprop:Generator_RowEvHandlerName="employee_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="employee_viewRowDeleted" msprop:Generator_RowClassName="employee_viewRow" msprop:Generator_UserTableName="employee_view" msprop:Generator_RowEvArgName="employee_viewRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="realname" msprop:Generator_ColumnVarNameInTable="columnrealname" msprop:Generator_ColumnPropNameInRow="realname" msprop:Generator_ColumnPropNameInTable="realnameColumn" msprop:Generator_UserColumnName="realname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="singel" msprop:Generator_ColumnVarNameInTable="columnsingel" msprop:Generator_ColumnPropNameInRow="singel" msprop:Generator_ColumnPropNameInTable="singelColumn" msprop:Generator_UserColumnName="singel" type="xs:boolean" minOccurs="0" />
+              <xs:element name="gender" msprop:Generator_ColumnVarNameInTable="columngender" msprop:Generator_ColumnPropNameInRow="gender" msprop:Generator_ColumnPropNameInTable="genderColumn" msprop:Generator_UserColumnName="gender" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="child" msprop:Generator_ColumnVarNameInTable="columnchild" msprop:Generator_ColumnPropNameInRow="child" msprop:Generator_ColumnPropNameInTable="childColumn" msprop:Generator_UserColumnName="child" type="xs:int" minOccurs="0" />
+              <xs:element name="education" msprop:Generator_ColumnVarNameInTable="columneducation" msprop:Generator_ColumnPropNameInRow="education" msprop:Generator_ColumnPropNameInTable="educationColumn" msprop:Generator_UserColumnName="education" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="birthdate" msprop:Generator_ColumnVarNameInTable="columnbirthdate" msprop:Generator_ColumnPropNameInRow="birthdate" msprop:Generator_ColumnPropNameInTable="birthdateColumn" msprop:Generator_UserColumnName="birthdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="number" msprop:Generator_ColumnVarNameInTable="columnnumber" msprop:Generator_ColumnPropNameInRow="number" msprop:Generator_ColumnPropNameInTable="numberColumn" msprop:Generator_UserColumnName="number" type="xs:int" minOccurs="0" />
+              <xs:element name="job" msprop:Generator_ColumnVarNameInTable="columnjob" msprop:Generator_ColumnPropNameInRow="job" msprop:Generator_ColumnPropNameInTable="jobColumn" msprop:Generator_UserColumnName="job" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="position" msprop:Generator_ColumnVarNameInTable="columnposition" msprop:Generator_ColumnPropNameInRow="position" msprop:Generator_ColumnPropNameInTable="positionColumn" msprop:Generator_UserColumnName="position" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="interview_view" msprop:Generator_TableClassName="interview_viewDataTable" msprop:Generator_TableVarName="tableinterview_view" msprop:Generator_RowChangedName="interview_viewRowChanged" msprop:Generator_TablePropName="interview_view" msprop:Generator_RowDeletingName="interview_viewRowDeleting" msprop:Generator_RowChangingName="interview_viewRowChanging" msprop:Generator_RowEvHandlerName="interview_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="interview_viewRowDeleted" msprop:Generator_RowClassName="interview_viewRow" msprop:Generator_UserTableName="interview_view" msprop:Generator_RowEvArgName="interview_viewRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:long" />
+              <xs:element name="realname" msprop:Generator_ColumnVarNameInTable="columnrealname" msprop:Generator_ColumnPropNameInRow="realname" msprop:Generator_ColumnPropNameInTable="realnameColumn" msprop:Generator_UserColumnName="realname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="education" msprop:Generator_ColumnVarNameInTable="columneducation" msprop:Generator_ColumnPropNameInRow="education" msprop:Generator_ColumnPropNameInTable="educationColumn" msprop:Generator_UserColumnName="education" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="interviewer" msprop:Generator_ColumnVarNameInTable="columninterviewer" msprop:Generator_ColumnPropNameInRow="interviewer" msprop:Generator_ColumnPropNameInTable="interviewerColumn" msprop:Generator_UserColumnName="interviewer" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="result" msprop:Generator_ColumnVarNameInTable="columnresult" msprop:Generator_ColumnPropNameInRow="result" msprop:Generator_ColumnPropNameInTable="resultColumn" msprop:Generator_UserColumnName="result" type="xs:boolean" minOccurs="0" />
+              <xs:element name="introductiontype" msprop:Generator_ColumnVarNameInTable="columnintroductiontype" msprop:Generator_ColumnPropNameInRow="introductiontype" msprop:Generator_ColumnPropNameInTable="introductiontypeColumn" msprop:Generator_UserColumnName="introductiontype" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="training" msprop:Generator_ColumnVarNameInTable="columntraining" msprop:Generator_ColumnPropNameInRow="training" msprop:Generator_ColumnPropNameInTable="trainingColumn" msprop:Generator_UserColumnName="training" type="xs:boolean" minOccurs="0" />
+              <xs:element name="training_date" msprop:Generator_ColumnVarNameInTable="columntraining_date" msprop:Generator_ColumnPropNameInRow="training_date" msprop:Generator_ColumnPropNameInTable="training_dateColumn" msprop:Generator_UserColumnName="training_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="position" msprop:Generator_ColumnVarNameInTable="columnposition" msprop:Generator_ColumnPropNameInRow="position" msprop:Generator_ColumnPropNameInTable="positionColumn" msprop:Generator_UserColumnName="position" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="interviewdate" msprop:Generator_ColumnVarNameInTable="columninterviewdate" msprop:Generator_ColumnPropNameInRow="interviewdate" msprop:Generator_ColumnPropNameInTable="interviewdateColumn" msprop:Generator_UserColumnName="interviewdate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="knowledge_view" msprop:Generator_TableClassName="knowledge_viewDataTable" msprop:Generator_TableVarName="tableknowledge_view" msprop:Generator_RowChangedName="knowledge_viewRowChanged" msprop:Generator_TablePropName="knowledge_view" msprop:Generator_RowDeletingName="knowledge_viewRowDeleting" msprop:Generator_RowChangingName="knowledge_viewRowChanging" msprop:Generator_RowEvHandlerName="knowledge_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="knowledge_viewRowDeleted" msprop:Generator_RowClassName="knowledge_viewRow" msprop:Generator_UserTableName="knowledge_view" msprop:Generator_RowEvArgName="knowledge_viewRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
+              <xs:element name="course_name" msprop:Generator_ColumnVarNameInTable="columncourse_name" msprop:Generator_ColumnPropNameInRow="course_name" msprop:Generator_ColumnPropNameInTable="course_nameColumn" msprop:Generator_UserColumnName="course_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="departmanname" msprop:Generator_ColumnVarNameInTable="columndepartmanname" msprop:Generator_ColumnPropNameInRow="departmanname" msprop:Generator_ColumnPropNameInTable="departmannameColumn" msprop:Generator_UserColumnName="departmanname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="institute" msprop:Generator_ColumnVarNameInTable="columninstitute" msprop:Generator_ColumnPropNameInRow="institute" msprop:Generator_ColumnPropNameInTable="instituteColumn" msprop:Generator_UserColumnName="institute" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="begindate" msprop:Generator_ColumnVarNameInTable="columnbegindate" msprop:Generator_ColumnPropNameInRow="begindate" msprop:Generator_ColumnPropNameInTable="begindateColumn" msprop:Generator_UserColumnName="begindate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="enddate" msprop:Generator_ColumnVarNameInTable="columnenddate" msprop:Generator_ColumnPropNameInRow="enddate" msprop:Generator_ColumnPropNameInTable="enddateColumn" msprop:Generator_UserColumnName="enddate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="goal" msprop:Generator_ColumnVarNameInTable="columngoal" msprop:Generator_ColumnPropNameInRow="goal" msprop:Generator_ColumnPropNameInTable="goalColumn" msprop:Generator_UserColumnName="goal" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cost" msprop:Generator_ColumnVarNameInTable="columncost" msprop:Generator_ColumnPropNameInRow="cost" msprop:Generator_ColumnPropNameInTable="costColumn" msprop:Generator_UserColumnName="cost" type="xs:long" minOccurs="0" />
+              <xs:element name="state" msprop:Generator_ColumnVarNameInTable="columnstate" msprop:Generator_ColumnPropNameInRow="state" msprop:Generator_ColumnPropNameInTable="stateColumn" msprop:Generator_UserColumnName="state" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="username" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_UserColumnName="username" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="password" msprop:Generator_ColumnVarNameInTable="columnpassword" msprop:Generator_ColumnPropNameInRow="password" msprop:Generator_ColumnPropNameInTable="passwordColumn" msprop:Generator_UserColumnName="password" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="realname" msprop:Generator_ColumnVarNameInTable="columnrealname" msprop:Generator_ColumnPropNameInRow="realname" msprop:Generator_ColumnPropNameInTable="realnameColumn" msprop:Generator_UserColumnName="realname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="emp_code" msprop:Generator_ColumnVarNameInTable="columnemp_code" msprop:Generator_ColumnPropNameInRow="emp_code" msprop:Generator_ColumnPropNameInTable="emp_codeColumn" msprop:Generator_UserColumnName="emp_code" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="knowledgemanagment_view" msprop:Generator_TableClassName="knowledgemanagment_viewDataTable" msprop:Generator_TableVarName="tableknowledgemanagment_view" msprop:Generator_RowChangedName="knowledgemanagment_viewRowChanged" msprop:Generator_TablePropName="knowledgemanagment_view" msprop:Generator_RowDeletingName="knowledgemanagment_viewRowDeleting" msprop:Generator_RowChangingName="knowledgemanagment_viewRowChanging" msprop:Generator_RowEvHandlerName="knowledgemanagment_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="knowledgemanagment_viewRowDeleted" msprop:Generator_RowClassName="knowledgemanagment_viewRow" msprop:Generator_UserTableName="knowledgemanagment_view" msprop:Generator_RowEvArgName="knowledgemanagment_viewRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
+              <xs:element name="realname" msprop:Generator_ColumnVarNameInTable="columnrealname" msprop:Generator_ColumnPropNameInRow="realname" msprop:Generator_ColumnPropNameInTable="realnameColumn" msprop:Generator_UserColumnName="realname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="number" msprop:Generator_ColumnVarNameInTable="columnnumber" msprop:Generator_ColumnPropNameInRow="number" msprop:Generator_ColumnPropNameInTable="numberColumn" msprop:Generator_UserColumnName="number" type="xs:int" minOccurs="0" />
+              <xs:element name="description" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_UserColumnName="description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="keyword" msprop:Generator_ColumnVarNameInTable="columnkeyword" msprop:Generator_ColumnPropNameInRow="keyword" msprop:Generator_ColumnPropNameInTable="keywordColumn" msprop:Generator_UserColumnName="keyword" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="date_" msprop:Generator_ColumnVarNameInTable="columndate_" msprop:Generator_ColumnPropNameInRow="date_" msprop:Generator_ColumnPropNameInTable="date_Column" msprop:Generator_UserColumnName="date_" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="organization" msprop:Generator_ColumnVarNameInTable="columnorganization" msprop:Generator_ColumnPropNameInRow="organization" msprop:Generator_ColumnPropNameInTable="organizationColumn" msprop:Generator_UserColumnName="organization" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="position" msprop:Generator_ColumnVarNameInTable="columnposition" msprop:Generator_ColumnPropNameInRow="position" msprop:Generator_ColumnPropNameInTable="positionColumn" msprop:Generator_UserColumnName="position" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="departman_ref" msprop:Generator_ColumnVarNameInTable="columndepartman_ref" msprop:Generator_ColumnPropNameInRow="departman_ref" msprop:Generator_ColumnPropNameInTable="departman_refColumn" msprop:Generator_UserColumnName="departman_ref" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="letters_view" msprop:Generator_TableClassName="letters_viewDataTable" msprop:Generator_TableVarName="tableletters_view" msprop:Generator_RowChangedName="letters_viewRowChanged" msprop:Generator_TablePropName="letters_view" msprop:Generator_RowDeletingName="letters_viewRowDeleting" msprop:Generator_RowChangingName="letters_viewRowChanging" msprop:Generator_RowEvHandlerName="letters_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="letters_viewRowDeleted" msprop:Generator_RowClassName="letters_viewRow" msprop:Generator_UserTableName="letters_view" msprop:Generator_RowEvArgName="letters_viewRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
+              <xs:element name="subject" msprop:Generator_ColumnVarNameInTable="columnsubject" msprop:Generator_ColumnPropNameInRow="subject" msprop:Generator_ColumnPropNameInTable="subjectColumn" msprop:Generator_UserColumnName="subject" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="organ" msprop:Generator_ColumnVarNameInTable="columnorgan" msprop:Generator_ColumnPropNameInRow="organ" msprop:Generator_ColumnPropNameInTable="organColumn" msprop:Generator_UserColumnName="organ" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="date" msprop:Generator_ColumnVarNameInTable="columndate" msprop:Generator_ColumnPropNameInRow="date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_UserColumnName="date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="type" msprop:Generator_ColumnVarNameInTable="columntype" msprop:Generator_ColumnPropNameInRow="type" msprop:Generator_ColumnPropNameInTable="typeColumn" msprop:Generator_UserColumnName="type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="senderorreciever" msprop:Generator_ColumnVarNameInTable="columnsenderorreciever" msprop:Generator_ColumnPropNameInRow="senderorreciever" msprop:Generator_ColumnPropNameInTable="senderorrecieverColumn" msprop:Generator_UserColumnName="senderorreciever" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="answer" msprop:Generator_ColumnVarNameInTable="columnanswer" msprop:Generator_ColumnPropNameInRow="answer" msprop:Generator_ColumnPropNameInTable="answerColumn" msprop:Generator_UserColumnName="answer" type="xs:long" minOccurs="0" />
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="managers_view" msprop:Generator_TableClassName="managers_viewDataTable" msprop:Generator_TableVarName="tablemanagers_view" msprop:Generator_RowChangedName="managers_viewRowChanged" msprop:Generator_TablePropName="managers_view" msprop:Generator_RowDeletingName="managers_viewRowDeleting" msprop:Generator_RowChangingName="managers_viewRowChanging" msprop:Generator_RowEvHandlerName="managers_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="managers_viewRowDeleted" msprop:Generator_RowClassName="managers_viewRow" msprop:Generator_UserTableName="managers_view" msprop:Generator_RowEvArgName="managers_viewRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="realname" msprop:Generator_ColumnVarNameInTable="columnrealname" msprop:Generator_ColumnPropNameInRow="realname" msprop:Generator_ColumnPropNameInTable="realnameColumn" msprop:Generator_UserColumnName="realname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="userpass_view" msprop:Generator_TableClassName="userpass_viewDataTable" msprop:Generator_TableVarName="tableuserpass_view" msprop:Generator_RowChangedName="userpass_viewRowChanged" msprop:Generator_TablePropName="userpass_view" msprop:Generator_RowDeletingName="userpass_viewRowDeleting" msprop:Generator_RowChangingName="userpass_viewRowChanging" msprop:Generator_RowEvHandlerName="userpass_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="userpass_viewRowDeleted" msprop:Generator_RowClassName="userpass_viewRow" msprop:Generator_UserTableName="userpass_view" msprop:Generator_RowEvArgName="userpass_viewRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
+              <xs:element name="username" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_UserColumnName="username" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="password" msprop:Generator_ColumnVarNameInTable="columnpassword" msprop:Generator_ColumnPropNameInRow="password" msprop:Generator_ColumnPropNameInTable="passwordColumn" msprop:Generator_UserColumnName="password" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="title" msprop:Generator_ColumnVarNameInTable="columntitle" msprop:Generator_ColumnPropNameInRow="title" msprop:Generator_ColumnPropNameInTable="titleColumn" msprop:Generator_UserColumnName="title" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="title_id" msprop:Generator_ColumnVarNameInTable="columntitle_id" msprop:Generator_ColumnPropNameInRow="title_id" msprop:Generator_ColumnPropNameInTable="title_idColumn" msprop:Generator_UserColumnName="title_id" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="KnowledgeManagement" msprop:Generator_TableClassName="KnowledgeManagementDataTable" msprop:Generator_TableVarName="tableKnowledgeManagement" msprop:Generator_TablePropName="KnowledgeManagement" msprop:Generator_RowDeletingName="KnowledgeManagementRowDeleting" msprop:Generator_RowChangingName="KnowledgeManagementRowChanging" msprop:Generator_RowEvHandlerName="KnowledgeManagementRowChangeEventHandler" msprop:Generator_RowDeletedName="KnowledgeManagementRowDeleted" msprop:Generator_UserTableName="KnowledgeManagement" msprop:Generator_RowChangedName="KnowledgeManagementRowChanged" msprop:Generator_RowEvArgName="KnowledgeManagementRowChangeEvent" msprop:Generator_RowClassName="KnowledgeManagementRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
+              <xs:element name="description" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_UserColumnName="description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="keyword" msprop:Generator_ColumnVarNameInTable="columnkeyword" msprop:Generator_ColumnPropNameInRow="keyword" msprop:Generator_ColumnPropNameInTable="keywordColumn" msprop:Generator_UserColumnName="keyword" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="date_" msprop:Generator_ColumnVarNameInTable="columndate_" msprop:Generator_ColumnPropNameInRow="date_" msprop:Generator_ColumnPropNameInTable="date_Column" msprop:Generator_UserColumnName="date_" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="organization" msprop:Generator_ColumnVarNameInTable="columnorganization" msprop:Generator_ColumnPropNameInRow="organization" msprop:Generator_ColumnPropNameInTable="organizationColumn" msprop:Generator_UserColumnName="organization" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="creatby" msprop:Generator_ColumnVarNameInTable="columncreatby" msprop:Generator_ColumnPropNameInRow="creatby" msprop:Generator_ColumnPropNameInTable="creatbyColumn" msprop:Generator_UserColumnName="creatby" type="xs:int" minOccurs="0" />
+              <xs:element name="creator" msprop:Generator_ColumnVarNameInTable="columncreator" msprop:Generator_ColumnPropNameInRow="creator" msprop:Generator_ColumnPropNameInTable="creatorColumn" msprop:Generator_UserColumnName="creator" type="xs:int" minOccurs="0" />
+              <xs:element name="creationdate" msprop:Generator_ColumnVarNameInTable="columncreationdate" msprop:Generator_ColumnPropNameInRow="creationdate" msprop:Generator_ColumnPropNameInTable="creationdateColumn" msprop:Generator_UserColumnName="creationdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="modifier" msprop:Generator_ColumnVarNameInTable="columnmodifier" msprop:Generator_ColumnPropNameInRow="modifier" msprop:Generator_ColumnPropNameInTable="modifierColumn" msprop:Generator_UserColumnName="modifier" type="xs:int" minOccurs="0" />
+              <xs:element name="lastmodifieddate" msprop:Generator_ColumnVarNameInTable="columnlastmodifieddate" msprop:Generator_ColumnPropNameInRow="lastmodifieddate" msprop:Generator_ColumnPropNameInTable="lastmodifieddateColumn" msprop:Generator_UserColumnName="lastmodifieddate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="license_view" msprop:Generator_TableClassName="license_viewDataTable" msprop:Generator_TableVarName="tablelicense_view" msprop:Generator_TablePropName="license_view" msprop:Generator_RowDeletingName="license_viewRowDeleting" msprop:Generator_RowChangingName="license_viewRowChanging" msprop:Generator_RowEvHandlerName="license_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="license_viewRowDeleted" msprop:Generator_UserTableName="license_view" msprop:Generator_RowChangedName="license_viewRowChanged" msprop:Generator_RowEvArgName="license_viewRowChangeEvent" msprop:Generator_RowClassName="license_viewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
+              <xs:element name="number" msprop:Generator_ColumnVarNameInTable="columnnumber" msprop:Generator_ColumnPropNameInRow="number" msprop:Generator_ColumnPropNameInTable="numberColumn" msprop:Generator_UserColumnName="number" type="xs:long" minOccurs="0" />
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="issuer" msprop:Generator_ColumnVarNameInTable="columnissuer" msprop:Generator_ColumnPropNameInRow="issuer" msprop:Generator_ColumnPropNameInTable="issuerColumn" msprop:Generator_UserColumnName="issuer" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="issudate" msprop:Generator_ColumnVarNameInTable="columnissudate" msprop:Generator_ColumnPropNameInRow="issudate" msprop:Generator_ColumnPropNameInTable="issudateColumn" msprop:Generator_UserColumnName="issudate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="expiredate" msprop:Generator_ColumnVarNameInTable="columnexpiredate" msprop:Generator_ColumnPropNameInRow="expiredate" msprop:Generator_ColumnPropNameInTable="expiredateColumn" msprop:Generator_UserColumnName="expiredate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="type" msprop:Generator_ColumnVarNameInTable="columntype" msprop:Generator_ColumnPropNameInRow="type" msprop:Generator_ColumnPropNameInTable="typeColumn" msprop:Generator_UserColumnName="type" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Departmans" msprop:Generator_TableClassName="DepartmansDataTable" msprop:Generator_TableVarName="tableDepartmans" msprop:Generator_RowChangedName="DepartmansRowChanged" msprop:Generator_TablePropName="Departmans" msprop:Generator_RowDeletingName="DepartmansRowDeleting" msprop:Generator_RowChangingName="DepartmansRowChanging" msprop:Generator_RowEvHandlerName="DepartmansRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartmansRowDeleted" msprop:Generator_RowClassName="DepartmansRow" msprop:Generator_UserTableName="Departmans" msprop:Generator_RowEvArgName="DepartmansRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vacation_view" msprop:Generator_TableClassName="vacation_viewDataTable" msprop:Generator_TableVarName="tablevacation_view" msprop:Generator_TablePropName="vacation_view" msprop:Generator_RowDeletingName="vacation_viewRowDeleting" msprop:Generator_RowChangingName="vacation_viewRowChanging" msprop:Generator_RowEvHandlerName="vacation_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="vacation_viewRowDeleted" msprop:Generator_UserTableName="vacation_view" msprop:Generator_RowChangedName="vacation_viewRowChanged" msprop:Generator_RowEvArgName="vacation_viewRowChangeEvent" msprop:Generator_RowClassName="vacation_viewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
+              <xs:element name="realname" msprop:Generator_ColumnVarNameInTable="columnrealname" msprop:Generator_ColumnPropNameInRow="realname" msprop:Generator_ColumnPropNameInTable="realnameColumn" msprop:Generator_UserColumnName="realname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="emp_ref" msprop:Generator_ColumnVarNameInTable="columnemp_ref" msprop:Generator_ColumnPropNameInRow="emp_ref" msprop:Generator_ColumnPropNameInTable="emp_refColumn" msprop:Generator_UserColumnName="emp_ref" type="xs:int" minOccurs="0" />
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dep_ref" msprop:Generator_ColumnVarNameInTable="columndep_ref" msprop:Generator_ColumnPropNameInRow="dep_ref" msprop:Generator_ColumnPropNameInTable="dep_refColumn" msprop:Generator_UserColumnName="dep_ref" type="xs:int" minOccurs="0" />
+              <xs:element name="type" msprop:Generator_ColumnVarNameInTable="columntype" msprop:Generator_ColumnPropNameInRow="type" msprop:Generator_ColumnPropNameInTable="typeColumn" msprop:Generator_UserColumnName="type" type="xs:boolean" minOccurs="0" />
+              <xs:element name="duration" msprop:Generator_ColumnVarNameInTable="columnduration" msprop:Generator_ColumnPropNameInRow="duration" msprop:Generator_ColumnPropNameInTable="durationColumn" msprop:Generator_UserColumnName="duration" type="xs:int" minOccurs="0" />
+              <xs:element name="fromdate" msprop:Generator_ColumnVarNameInTable="columnfromdate" msprop:Generator_ColumnPropNameInRow="fromdate" msprop:Generator_ColumnPropNameInTable="fromdateColumn" msprop:Generator_UserColumnName="fromdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="todate" msprop:Generator_ColumnVarNameInTable="columntodate" msprop:Generator_ColumnPropNameInRow="todate" msprop:Generator_ColumnPropNameInTable="todateColumn" msprop:Generator_UserColumnName="todate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="date_" msprop:Generator_ColumnVarNameInTable="columndate_" msprop:Generator_ColumnPropNameInRow="date_" msprop:Generator_ColumnPropNameInTable="date_Column" msprop:Generator_UserColumnName="date_" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:interview_view" />
+      <xs:field xpath="mstns:Expr1" />
+    </xs:unique>
+    <xs:unique name="knowledge_view_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:knowledge_view" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="knowledgemanagment_view_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:knowledgemanagment_view" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="letters_view_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:letters_view" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="KnowledgeManagement_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:KnowledgeManagement" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="license_view_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:license_view" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="vacation_view_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vacation_view" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

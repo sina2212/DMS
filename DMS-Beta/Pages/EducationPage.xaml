@@ -1,0 +1,63 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DMS_Beta.Pages"
+      xmlns:DMS_Beta="clr-namespace:DMS_Beta" x:Class="DMS_Beta.Pages.EducationPage"
+      mc:Ignorable="d" Background="White"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EducationPage" Loaded="EducationLoad">
+
+    <Page.Resources>
+        <DMS_Beta:_DMS_rasaDataSet x:Key="_DMS_rasaDataSet"/>
+        <CollectionViewSource x:Key="knowledge_viewViewSource" Source="{Binding knowledge_view, Source={StaticResource _DMS_rasaDataSet}}"/>
+    </Page.Resources>
+
+    <Grid DataContext="{StaticResource knowledge_viewViewSource}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right"
+            VerticalAlignment="Center" Margin="10">
+            <Button Height="40" Width="40" Margin="0 0 10 0" materialdesign:ButtonAssist.CornerRadius="20" Click="SearchEducation"
+                BorderThickness="0" Background="#FF008BFF" Style="{StaticResource MaterialDesignIconButton}">
+                <materialdesign:PackIcon Kind="Search" Foreground="White"/>
+            </Button>
+            <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20">
+                <TextBox Width="200" materialdesign:HintAssist.Hint=" Search ..." x:Name="searchtxt" Margin="8 0 0 0"
+                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+            </Border>
+        </StackPanel>
+        <Button Content="+" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+            Height="45" Width="45" FontSize="18" Margin="20 0 0 0" BorderBrush="Black" x:Name="newEducation"
+            Background="{DynamicResource MaterialDesignBody}" materialdesign:ButtonAssist.CornerRadius="5"
+            VerticalAlignment="Center" HorizontalAlignment="Left" Click="newEducation_Click"/>
+        <Border Grid.Row="1" Grid.Column="0" Margin="10" CornerRadius="5" BorderThickness="1" BorderBrush="Black">
+            <DataGrid ItemsSource="{Binding Source={StaticResource knowledge_viewViewSource}}"
+                EnableRowVirtualization="True" AutoGenerateColumns="False" x:Name="PFdata"
+                GridLinesVisibility="All" RowBackground="LightGray" RowHeight="35" IsReadOnly="True"
+                AlternatingRowBackground="White" FlowDirection="RightToLeft" MouseDoubleClick="Rowselect"
+                RowDetailsVisibilityMode="VisibleWhenSelected" HorizontalGridLinesBrush="Black">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="iDColumn" Width="SizeToHeader" Header="ردیف" Binding="{Binding ID}"/>
+                    <DataGridTextColumn x:Name="course_nameColumn" Width="120" Header="نام دوره" Binding="{Binding course_name}"/>
+                    <DataGridTextColumn x:Name="departmannameColumn" Width="SizeToHeader" Header="نام واحد متقاضی" Binding="{Binding departmanname}"/>
+                    <DataGridTextColumn x:Name="instituteColumn" Width="SizeToHeader" Header="آموزشگاه برگزار کننده" Binding="{Binding institute}"/>
+                    <DataGridTextColumn x:Name="begindate" Width="SizeToHeader" Header="تاریخ آغاز دوره" Binding="{Binding begindate}"/>
+                    <DataGridTextColumn x:Name="enddate" Width="SizeToHeader" Header="تاریخ پایان دوره" Binding="{Binding enddate}"/>
+                    <DataGridTextColumn x:Name="goalColumn" Width="SizeToHeader" Header="هدف از آموزش" Binding="{Binding goal}"/>
+                    <DataGridTextColumn x:Name="costColumn" Width="SizeToHeader" Header="قیمت دوره" Binding="{Binding cost}"/>
+                    <DataGridTextColumn x:Name="stateColumn" Width="SizeToHeader" Header="وضعیت دوره" Binding="{Binding state}"/>
+                    <DataGridTextColumn x:Name="usernameColumn" Width="200" Header="نام کاربری" Binding="{Binding username}"/>
+                    <DataGridTextColumn x:Name="passwordColumn" Width="100" Header="رمز عبور" Binding="{Binding password}"/>
+                    <DataGridTextColumn x:Name="realnameColumn" Width="120" Header="نام کارمند" Binding="{Binding realname}"/>
+                    <DataGridTextColumn x:Name="emp_codeColumn" Width="SizeToHeader" Header="کد پرسنلی" Binding="{Binding emp_code}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Border>
+    </Grid>
+</Page>

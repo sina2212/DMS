@@ -1,0 +1,59 @@
+﻿<Page
+      xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:DMS_Beta="clr-namespace:DMS_Beta"
+    x:Class="DMS_Beta.Pages.KnowledgeManagementPage"
+      mc:Ignorable="d" Background="White" Loaded="KnowledgeManagementLoad"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="KnowledgeManagementPage">
+
+    <Page.Resources>
+        <DMS_Beta:_DMS_rasaDataSet x:Key="_DMS_rasaDataSet"/>
+        <CollectionViewSource x:Key="knowledgeManagementViewSource" Source="{Binding KnowledgeManagement, Source={StaticResource _DMS_rasaDataSet}}"/>
+        <CollectionViewSource x:Key="knowledgemanagment_viewViewSource" Source="{Binding knowledgemanagment_view, Source={StaticResource _DMS_rasaDataSet}}"/>
+    </Page.Resources>
+
+    <Grid DataContext="{StaticResource knowledgeManagementViewSource}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right"
+            VerticalAlignment="Center" Margin="10">
+            <Button Height="40" Width="40" Margin="0 0 10 0" materialdesign:ButtonAssist.CornerRadius="20" Click="KMSearch"
+                BorderThickness="0" Background="#FF008BFF" Style="{StaticResource MaterialDesignIconButton}">
+                <materialdesign:PackIcon Kind="Search" Foreground="White"/>
+            </Button>
+            <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20">
+                <TextBox Width="200" materialdesign:HintAssist.Hint=" Search ..." Margin="8 0 0 0" x:Name="searchtxt"
+                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+            </Border>
+        </StackPanel>
+        <Button Content="+" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+            Height="45" Width="45" FontSize="18" Margin="20 0 0 0" BorderBrush="Black" x:Name="newEducation"
+            Background="{DynamicResource MaterialDesignBody}" materialdesign:ButtonAssist.CornerRadius="5"
+            VerticalAlignment="Center" HorizontalAlignment="Left" Click="newKM_Click"/>
+        <Border Grid.Row="1" Grid.Column="0" Margin="10" CornerRadius="5" BorderThickness="1" BorderBrush="Black">
+            <DataGrid x:Name="PFdata" GridLinesVisibility="All" RowBackground="LightGray" RowHeight="35"
+                AlternatingRowBackground="White" FlowDirection="RightToLeft" IsReadOnly="True" MouseDoubleClick="Selectrow"
+                AutoGenerateColumns="False" ItemsSource="{Binding Source={StaticResource knowledgemanagment_viewViewSource}}"
+                RowDetailsVisibilityMode="VisibleWhenSelected" HorizontalGridLinesBrush="Black">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="iDColumn" Binding="{Binding ID}" Header="ID" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="realnameColumn" Binding="{Binding realname}" Header="نام کارمند" Width="120"/>
+                    <DataGridTextColumn x:Name="numberColumn" Binding="{Binding number}" Header="کد پرسنلی" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="descriptionColumn" Binding="{Binding description}" Header="سناریو اتفاق افتاده" Width="300"/>
+                    <DataGridTextColumn x:Name="keywordColumn" Binding="{Binding keyword}" Header="کلمه کلیدی" Width="120"/>
+                    <DataGridTextColumn x:Name="date_Column" Header="تاریخ" Width="120" Binding="{Binding date_}"/>
+                    <DataGridTextColumn x:Name="organizationColumn" Binding="{Binding organization}" Header="سازمان" Width="150"/>
+                    <DataGridTextColumn x:Name="positionColumn" Binding="{Binding position}" Header="سمت شغلی" Width="120"/>
+                    <DataGridTextColumn x:Name="nameColumn" Binding="{Binding name}" Header="نانم دپارتمان" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="departman_refColumn" Binding="{Binding departman_ref}" Header="کد دپارتمان" Width="SizeToHeader"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</Page>
