@@ -188,7 +188,7 @@ namespace DMS_Beta.Windows
                 {
                     item.Proccess = EducationID;
                     AttachmentController ac = new AttachmentController();
-                    ac.SaveAttachments(item);
+                    //ac.SaveAttachments(item);
                 }
                 catch (SqlException ex)
                 {

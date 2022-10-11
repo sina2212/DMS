@@ -67,7 +67,7 @@ namespace DMS_Beta.Windows
                 {
                     AttachmentController ac = new AttachmentController();
                     item.Proccess = Int64.Parse(code.Text);
-                    ac.SaveAttachments(item);
+                    //ac.SaveAttachments(item);
                 }
                 if (Save.Content.ToString() == "ذخیره")//save
                 {

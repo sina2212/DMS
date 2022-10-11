@@ -46,8 +46,8 @@
                         <TextBox x:Name="txt1" Width="340" Margin="10 0 0 0" materialdesign:HintAssist.Hint="آدرس" TextAlignment="Center"
                             FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
                     </Border>
-                    <Button Height="30" Width="30" Margin="10 0 0 0" 
-                        BorderThickness="0" Background="Green" Style="{StaticResource MaterialDesignIconButton}" Click="Save">
+                    <Button Height="30" Width="30" Margin="10 0 0 0" BorderThickness="0"
+                        Background="Green" Style="{StaticResource MaterialDesignIconButton}" Click="Save">
                         <Button.Content>
                             <materialdesign:PackIcon Kind="Check" Foreground="White"/>
                         </Button.Content>

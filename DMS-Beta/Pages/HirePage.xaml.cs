@@ -179,7 +179,7 @@ namespace DMS_Beta.Pages
                 SaveToAttachmentsTabel(licenses);
                 AttachmentController ac = new AttachmentController();
                 cover.Proccess = Int64.Parse(code.Text);
-                ac.SaveAttachments(cover);
+                //ac.SaveAttachments(cover);
                 #endregion
                 
                 #region phones
@@ -219,7 +219,7 @@ namespace DMS_Beta.Pages
             {
                 item.Proccess = Int64.Parse(code.Text);
                 AttachmentController ac = new AttachmentController();
-                ac.SaveAttachments(item);
+                //ac.SaveAttachments(item);
             }
         }
         private List<Attachment> ChooseFile(string p_type, string p_subtype, TextBlock label)

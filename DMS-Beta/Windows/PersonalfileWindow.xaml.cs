@@ -335,7 +335,7 @@ namespace DMS_Beta.Windows
                     {
                         item.Proccess = Int64.Parse(code.Text);
                         AttachmentController ac = new AttachmentController();
-                        ac.SaveAttachments(item);
+                        //ac.SaveAttachments(item);
                     }
                     catch (SqlException ex)
                     {

@@ -60,7 +60,7 @@ namespace DMS_Beta.Windows
                 {
                     for (int i = 0; i < attachments.Count; i++)
                     {
-                        attachmentController.SaveAttachments(attachments[i]);
+                        //attachmentController.SaveAttachments(attachments[i]);
                     }
                     MessageBox.Show(controller.SaveLicense(license) == "1" ? "عملیات موفقیت آمیز بود" : "گواهی موجود هست");
                 }
@@ -68,7 +68,7 @@ namespace DMS_Beta.Windows
                 {
                     for (int i = 0; i < attachments.Count; i++)
                     {
-                        attachmentController.SaveAttachments(attachments[i]);
+                        //attachmentController.SaveAttachments(attachments[i]);
                     }
                     license.ID = ID_;
                     MessageBox.Show(controller.UpdateLicense(license) == "1" ? "عملیات موفقیت آمیز بود" : "خطایی رخ داده");

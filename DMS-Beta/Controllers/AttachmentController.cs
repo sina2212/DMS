@@ -12,7 +12,7 @@ namespace DMS_Beta.Controllers
 {
     public class AttachmentController
     {
-        public string SaveAttachments(Attachment attachment)
+        public string SaveAttachments(Attachment attachment, int emp)
         {
             List<SqlParameter> parameters = new List<SqlParameter>();
             SqlParameter p;
@@ -37,6 +37,9 @@ namespace DMS_Beta.Controllers
             parameters.Add(p);
             p = new SqlParameter("@categoryid", SqlDbType.BigInt);
             p.Value = attachment.Proccess;
+            parameters.Add(p);
+            p = new SqlParameter("@emp", SqlDbType.Int);
+            p.Value = emp;
             parameters.Add(p);
             p = new SqlParameter("@ret", SqlDbType.NVarChar, 50);
             p.Direction = ParameterDirection.Output;

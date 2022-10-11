@@ -25,7 +25,7 @@ namespace DMS_Beta.Windows
         #region variables
         private Int64 interviewid;
         private string function;
-        private int code_;
+        private int code_;//emp code. used fro crud function in DB
         int attachesindex = 0;
         List<InterviewItem> interviewers = new List<InterviewItem>();
         InterviewerCard ic;
@@ -325,6 +325,7 @@ namespace DMS_Beta.Windows
         {
             Interview interview = new Interview();
             InterviewController ic = new InterviewController();
+
             #region interviewers
             if (interviewers.Count > 0)
             {
@@ -344,40 +345,86 @@ namespace DMS_Beta.Windows
                         MessageBox.Show(ex.Message);
                     }
                 }
-            } 
-            #endregion
-            #region educational
-            if (educational.IsChecked == true)
-            {
-                interview.I_Code = INterviewID;
-                interview.Educational = true;
-                interview.Educationdate = educationdate.SelectedDate.ToDateTime();
-                interview.EducationResult = result2.Text;
-                ic.SaveEducational(interview, Code);
             }
             #endregion
-            #region training
-            if (true)
+
+            #region educational
+            try
             {
-                interview.I_Code = INterviewID;
-                interview.Training = true;
-                interview.TrainingDate = trainingdate.SelectedDate.ToDateTime();
-                interview.TrainingResult = result1.Text;
+                if (educational.IsChecked == true)
+                {
+                    interview.I_Code = INterviewID;
+                    interview.Educational = true;
+                    interview.Educationdate = educationdate.SelectedDate.ToDateTime();
+                    interview.EducationResult = result2.Text;
+                }
+                else
+                {
+                    interview.I_Code = INterviewID;
+                    interview.Educational = false;
+                    interview.Educationdate = DateTime.Now;
+                    interview.EducationResult = "null";
+                }
+                ic.SaveEducational(interview, Code);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            #endregion
+
+            #region training
+            try
+            {
+                if (trial.IsChecked == true)
+                {
+                    interview.I_Code = INterviewID;
+                    interview.Training = true;
+                    interview.TrainingDate = trainingdate.SelectedDate.ToDateTime();
+                    interview.TrainingResult = result1.Text;
+                }
+                else
+                {
+                    interview.I_Code = INterviewID;
+                    interview.Training = false;
+                    interview.TrainingDate = DateTime.Now;
+                    interview.TrainingResult = "null";
+                }
                 ic.SaveTrial(interview, Code);
-            } 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             #endregion
         }
 
         private void checkchange1(object sender, RoutedEventArgs e)
         {
-            trainingdate.IsEnabled = true;
-            result1.IsEnabled = true;
+            if (trial.IsChecked == true)
+            {
+                trainingdate.IsEnabled = true;
+                result1.IsEnabled = true;
+            }
+            else
+            {
+                trainingdate.IsEnabled = false;
+                result1.IsEnabled = false;
+            }
         }
 
         private void checkchange2(object sender, RoutedEventArgs e)
         {
-            educationdate.IsEnabled = true;
-            result2.IsEnabled = true;
+            if (educational.IsChecked == true)
+            {
+                educationdate.IsEnabled = true;
+                result2.IsEnabled = true;
+            }
+            else
+            {
+                educationdate.IsEnabled = false;
+                result2.IsEnabled = false;
+            }
         }
 
         private void layoutupdate(object sender, EventArgs e)
@@ -389,6 +436,37 @@ namespace DMS_Beta.Windows
             else
             {
                 InterviewItem.IsEnabled = true;
+            }
+        }
+
+        private void EditeInterviewer(object sender, RoutedEventArgs e)//Edite a row from interviewtable
+        {
+            MessageBox.Show(INterviewID.ToString());
+        }
+
+        private void DeleteInterviewer(object sender, RoutedEventArgs e)//delete a row from interviewtable
+        {
+            var cellInfo = new DataGridCellInfo(interviewerstable.CurrentItem, interviewerstable.Columns[0]);
+            var cellContent = cellInfo.Column.GetCellContent(cellInfo.Item);
+            DataGridCell cell = (DataGridCell)cellContent.Parent;
+            string index = ((TextBlock)cell.Content).Text;
+            var result = MessageBox.Show("Delete", "آیا مایلید حذف کنید", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    Models.InterviewItem interviewer = new InterviewItem();
+                    interviewer.InterViewref = INterviewID;
+                    interviewer.Name = index;
+                    InterviewItemController iwc = new InterviewItemController();
+                    iwc.DeleteInterviewer(interviewer);
+                    interviewerstable.Items.Remove(interviewer);
+                    MessageBox.Show("deleted");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -448,7 +526,7 @@ namespace DMS_Beta.Windows
             {
                 AttachmentController ac = new AttachmentController();
                 attachments[i].Proccess = INterviewID;
-                ac.SaveAttachments(attachments[i]);
+                ac.SaveAttachments(attachments[i], Code);
             }
         }
         private void loaddatagridview()

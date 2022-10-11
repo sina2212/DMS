@@ -56,7 +56,7 @@ namespace DMS_Beta.Windows
                 DepartmanController depcontroller = new DepartmanController();
                 MessageBox.Show(depcontroller.Save(departman) == "1" ? "عملیات انجام شد" : "خطایی رخ داده");
                 AttachmentController attController = new AttachmentController();
-                attController.SaveAttachments(icon);
+                //attController.SaveAttachments(icon);
             }
             catch (SqlException ex)
             {
