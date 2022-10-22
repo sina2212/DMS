@@ -30,9 +30,9 @@
                             <!--#region code, fullname, title, code melli-->
                             <StackPanel Margin="15 40 0 0" Orientation="Horizontal" HorizontalAlignment="Center">
                                 <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Margin="15 0 0 0">
-                                    <TextBox Name="fullname" materialdesign:HintAssist.Hint="نام و نام خانوادگی"
-                                    Margin="10 0 0 0" TextAlignment="Center" FontSize="20" Width="200" ToolTip="نام و نام خانوادگی"
-                                    BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+                                    <TextBox Name="fullname" materialdesign:HintAssist.Hint="نام و نام خانوادگی" Margin="10 0 0 0"
+                                        TextAlignment="Center" FontSize="20" Width="200" ToolTip="نام و نام خانوادگی"
+                                        BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
                                 </Border>
                                 <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Margin="15 0 0 0">
                                     <TextBox Width="200" x:Name="nationalcode" materialdesign:HintAssist.Hint="کد ملی" Margin="10 0 0 0" TextAlignment="Center"
@@ -106,11 +106,11 @@
                             </StackPanel>
                             <Border Margin="10" CornerRadius="5" BorderThickness="1" BorderBrush="Black">
                                 <DataGrid HorizontalAlignment="Left" Height="150" Width="auto" ColumnWidth="100"
-                                    x:Name="interviewerstable" VerticalAlignment="Top" RowHeight="38">
+                                    x:Name="interviewerstable" VerticalAlignment="Top" RowHeight="38" IsReadOnly="False">
                                     <DataGrid.Columns>
-                                        <DataGridTextColumn x:Name="interviewersmname" Width="Auto" Header="نام مصاحبه کننده" Binding="{Binding Name}"/>
-                                        <DataGridTextColumn x:Name="comment" Width="SizeToHeader" Header="نظر" Binding="{Binding Result}"/>
-                                        <DataGridTextColumn x:Name="intro" Width="Auto" Header="توضیحات" Binding="{Binding Comment}"/>
+                                        <DataGridTextColumn x:Name="interviewersmname" Width="Auto" Header="نام مصاحبه کننده" Binding="{Binding Name}" IsReadOnly="True"/>
+                                        <DataGridTextColumn x:Name="comment" Width="SizeToHeader" Header="نظر" Binding="{Binding Result}" IsReadOnly="False"/>
+                                        <DataGridTextColumn x:Name="intro" Width="Auto" Header="توضیحات" Binding="{Binding Comment}" IsReadOnly="False"/>
                                         <DataGridTemplateColumn x:Name="Edite" Width="Auto" Header="Edite">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>

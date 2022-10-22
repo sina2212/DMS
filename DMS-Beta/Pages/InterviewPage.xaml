@@ -5,7 +5,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DMS_Beta.Pages"
-      xmlns:DMS_Beta="clr-namespace:DMS_Beta" x:Class="DMS_Beta.Pages.InterviewPage"
+      xmlns:DMS_Beta="clr-namespace:DMS_Beta" xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="DMS_Beta.Pages.InterviewPage"
       mc:Ignorable="d" Background="White" Loaded="InterviewLoad"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="InterviewPage">
@@ -37,46 +37,65 @@
             VerticalAlignment="Center" HorizontalAlignment="Left"/>
         <Border Grid.Row="1" Grid.Column="0" Margin="10" CornerRadius="5" BorderThickness="1" BorderBrush="Black">
             <DataGrid ItemsSource="{Binding Source={StaticResource interview_viewViewSource}}" FlowDirection="RightToLeft"
-                EnableRowVirtualization="True" AutoGenerateColumns="False" x:Name="PFdata" AlternatingRowBackground="White" 
-                GridLinesVisibility="All" RowBackground="LightGray" RowHeight="35" IsReadOnly="True" MouseDoubleClick="Rowselect"
-                RowDetailsVisibilityMode="VisibleWhenSelected" HorizontalGridLinesBrush="Black">
+                    EnableRowVirtualization="True" AutoGenerateColumns="False" x:Name="PFdata" AlternatingRowBackground="White" 
+                    GridLinesVisibility="All" RowBackground="LightGray" RowHeight="35" MouseDoubleClick="Rowselect"
+                    RowDetailsVisibilityMode="VisibleWhenSelected" HorizontalGridLinesBrush="Black" IsReadOnly="True"
+                    HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                 <DataGrid.Columns>
                     <DataGridTextColumn x:Name="expr1Column" Width="SizeToHeader" Header="ردیف" Binding="{Binding Expr1}"/>
                     <DataGridTextColumn x:Name="realnameColumn" Width="Auto" Header="نام مصاحبه شونده" Binding="{Binding realname}"/>
                     <DataGridTextColumn x:Name="educationColumn" Width="SizeToHeader" Header="آخرین مدرک تحصیلی" Binding="{Binding education}"/>
-                    <DataGridTemplateColumn x:Name="interviewers" Width="Auto" Header="مصاحبه کننده">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <ComboBox x:Name="interviewers2" Width="100" Height="30" Background="Transparent" ItemBindingGroup="{Binding box}"/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTextColumn x:Name="resultColumn" Width="Auto" Header="نتیجه" Binding="{Binding result}"/>
-                    <DataGridTextColumn x:Name="introductiontypeColumn" Width="SizeToHeader" Header="نحوه آشنایی با شرکت" Binding="{Binding introductiontype}"/>
-                    <DataGridCheckBoxColumn x:Name="trainingColumn" Width="SizeToHeader" Header="آموزشی" Binding="{Binding training}">
+                    <!--#region educational-->
+                    <DataGridCheckBoxColumn x:Name="trainingColumn" Width="SizeToHeader" Header="آموزشی" Binding="{Binding educational}">
                         <DataGridCheckBoxColumn.ElementStyle>
-                            <Style TargetType="CheckBox">
+                            <Style TargetType="{x:Type CheckBox}">
                                 <Setter Property="FlowDirection" Value="LeftToRight"/>
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                <Setter Property="IsEnabled" Value="False"/>
                             </Style>
                         </DataGridCheckBoxColumn.ElementStyle>
                     </DataGridCheckBoxColumn>
-                    <DataGridTextColumn x:Name="trainingdate" Width="Auto" Header="تاریخ آموزشی" Binding="{Binding training_date}">
+                    <DataGridTextColumn x:Name="resultColumn" Width="Auto" Header="نتیجه" Binding="{Binding education_res}"/>
+                    <DataGridTextColumn x:Name="educationdate" Width="Auto" Header="تاریخ دوره آموزشی" Binding="{Binding education_date}">
                         <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
+                            <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="FlowDirection" Value="LeftToRight"/>
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
+                    <!--#endregion-->
+                    <!--#region trial-->
+                    <DataGridCheckBoxColumn x:Name="trial" Width="SizeToHeader" Header="آزمایشی" Binding="{Binding trial}">
+                        <DataGridCheckBoxColumn.ElementStyle>
+                            <Style TargetType="{x:Type CheckBox}">
+                                <Setter Property="FlowDirection" Value="LeftToRight"/>
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                <Setter Property="IsEnabled" Value="False"/>
+                            </Style>
+                        </DataGridCheckBoxColumn.ElementStyle>
+                    </DataGridCheckBoxColumn>
+                    <DataGridTextColumn x:Name="result2Column" Width="Auto" Header="نتیجه" Binding="{Binding training_res}"/>
+                    <DataGridTextColumn x:Name="trainingdate" Width="Auto" Header="تاریخ دوره آزمایشی" Binding="{Binding training_date}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="FlowDirection" Value="LeftToRight"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <!--#endregion-->
+                    <DataGridTextColumn x:Name="introductiontypeColumn" Width="SizeToHeader" Header="نحوه آشنایی با شرکت" Binding="{Binding introductiontype}"/>
                     <DataGridTextColumn x:Name="positionColumn" Width="Auto" Header="موقعیت شغلی" Binding="{Binding position}"/>
                     <DataGridTextColumn x:Name="interviewdateColumn" Width="Auto" Header="تاریخ مصاحبه" Binding="{Binding interviewdate}">
                         <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
+                            <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="TextAlignment" Value="Left"/>
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
+                    <DataGridTextColumn x:Name="interviewers" Width="Auto" Header="مصاحبه کنندگان" Binding="{Binding name}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Border>
+        
     </Grid>
 </Page>

@@ -67,46 +67,43 @@ namespace DMS_Beta.Pages
                 for (int j = 0; j < PFdata.Items.Count; j++)
                 {
                     DataRowView rowView = (PFdata.Items[j] as DataRowView);
-                    DateTime i_date = DateTime.Parse((PFdata.Items[j] as DataRowView).Row.ItemArray[6].ToString());
-                    PersianCalendar pc = new PersianCalendar();
                     rowView.BeginEdit();
-                    rowView[6] = pc.GetYear(i_date).ToString() + "/" + pc.GetMonth(i_date).ToString() + "/" + pc.GetDayOfMonth(i_date).ToString();
+                    changedate(j, 12, rowView);
+                    changedate(j, 9, rowView);
+                    changedate(j, 5, rowView);
                     rowView.EndEdit();
                     PFdata.Items.Refresh();
                 }
                 #endregion
 
-                #region Show All Interviewers from All Interviews
-                cmd = new SqlCommand();
                 for (int i = 0; i < PFdata.Items.Count; i++)
                 {
                     DataRowView rowView = (PFdata.Items[i] as DataRowView);
                     int iref = int.Parse((PFdata.Items[i] as DataRowView).Row.ItemArray[0].ToString());
                     cmd.Connection = con;
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "select interviewer from InterviewItem where interviewref = " + iref.ToString();
+                    cmd.CommandText = "select interviewer from InterviewItem where interviewref = 1";
                     dt = new DataTable();
                     SqlDataReader dr2 = cmd.ExecuteReader();
                     dt.Load(dr2);
-                    ComboBox box = new ComboBox();
                     for (int j = 0; j < dt.Rows.Count; j++)
                     {
-                        ComboBoxItem item = new ComboBoxItem();
-                        item.Content = dt.Rows[j][0].ToString();
-                        item.FontSize = 14;
-                        box.Items.Add(item);
+                        rowView.BeginEdit();
+                        //rowView[3] += dt.Rows[j].ToString() + "-";
+                        
+                        rowView.EndEdit();
+                        PFdata.Items.Refresh();
                     }
                 }
-                #endregion
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Test" + ex.Message);
+                MessageBox.Show(ex.Class + ". " + ex.Message);
             }
             con.Close();
         }
 
-        private void Rowselect(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void Rowselect(object sender, System.Windows.Input.MouseButtonEventArgs e)//select a interview to show
         {
             var cellInfo = new DataGridCellInfo(PFdata.CurrentItem, PFdata.Columns[0]);
             var cellContent = cellInfo.Column.GetCellContent(cellInfo.Item);
@@ -117,7 +114,7 @@ namespace DMS_Beta.Pages
             window.ShowDialog();
         }
 
-        private void SearchInterview(object sender, RoutedEventArgs e)
+        private void SearchInterview(object sender, RoutedEventArgs e)//serach for a specefic interview
         {
             bool flag = false;
             List<Int64> invsid = new List<Int64>();
@@ -140,6 +137,16 @@ namespace DMS_Beta.Pages
             if (flag==false)
             {
                 MessageBox.Show("مصاحبه ایی مربوط به این شخص پیدا نشد");
+            }
+        }
+        
+        private void changedate(int i, int j, DataRowView rowView)//convert datetime fo grid to shamsi
+        {
+            if ((PFdata.Items[i] as DataRowView).Row.ItemArray[j].ToString() != "")
+            {
+                PersianCalendar pc = new PersianCalendar();
+                DateTime date = DateTime.Parse((PFdata.Items[i] as DataRowView).Row.ItemArray[j].ToString());
+                rowView[j] = pc.GetYear(date).ToString() + "/" + pc.GetMonth(date).ToString() + "/" + pc.GetDayOfMonth(date).ToString();
             }
         }
     }

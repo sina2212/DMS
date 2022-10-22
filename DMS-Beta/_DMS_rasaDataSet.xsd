@@ -81,10 +81,10 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="interview_viewTableAdapter" GeneratorDataComponentClassName="interview_viewTableAdapter" Name="interview_view" UserDataComponentName="interview_viewTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DMS_rasaConnectionString (Settings)" DbObjectName="[DMS-rasa].dbo.interview_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="DMS_rasaConnectionString (Settings)" DbObjectName="[DMS-rasa].dbo.interview_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Expr1, realname, education, interviewer, result, introductiontype, training, training_date, position, interviewdate FROM dbo.interview_view</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM dbo.interview_view</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -94,13 +94,17 @@
               <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
               <Mapping SourceColumn="realname" DataSetColumn="realname" />
               <Mapping SourceColumn="education" DataSetColumn="education" />
-              <Mapping SourceColumn="interviewer" DataSetColumn="interviewer" />
-              <Mapping SourceColumn="result" DataSetColumn="result" />
               <Mapping SourceColumn="introductiontype" DataSetColumn="introductiontype" />
-              <Mapping SourceColumn="training" DataSetColumn="training" />
               <Mapping SourceColumn="training_date" DataSetColumn="training_date" />
               <Mapping SourceColumn="position" DataSetColumn="position" />
               <Mapping SourceColumn="interviewdate" DataSetColumn="interviewdate" />
+              <Mapping SourceColumn="interviewee_ref" DataSetColumn="interviewee_ref" />
+              <Mapping SourceColumn="educational" DataSetColumn="educational" />
+              <Mapping SourceColumn="education_date" DataSetColumn="education_date" />
+              <Mapping SourceColumn="education_res" DataSetColumn="education_res" />
+              <Mapping SourceColumn="trial" DataSetColumn="trial" />
+              <Mapping SourceColumn="training_res" DataSetColumn="training_res" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -397,7 +401,7 @@ SELECT ID, description, keyword, date_, organization, creatby, creator, creation
   <xs:element name="_DMS_rasaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_DMS_rasaDataSet" msprop:Generator_UserDSName="_DMS_rasaDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="departmansfiles_view" msprop:Generator_TableClassName="departmansfiles_viewDataTable" msprop:Generator_TableVarName="tabledepartmansfiles_view" msprop:Generator_RowChangedName="departmansfiles_viewRowChanged" msprop:Generator_TablePropName="departmansfiles_view" msprop:Generator_RowDeletingName="departmansfiles_viewRowDeleting" msprop:Generator_RowChangingName="departmansfiles_viewRowChanging" msprop:Generator_RowEvHandlerName="departmansfiles_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="departmansfiles_viewRowDeleted" msprop:Generator_RowClassName="departmansfiles_viewRow" msprop:Generator_UserTableName="departmansfiles_view" msprop:Generator_RowEvArgName="departmansfiles_viewRowChangeEvent">
+        <xs:element name="departmansfiles_view" msprop:Generator_TableClassName="departmansfiles_viewDataTable" msprop:Generator_TableVarName="tabledepartmansfiles_view" msprop:Generator_TablePropName="departmansfiles_view" msprop:Generator_RowDeletingName="departmansfiles_viewRowDeleting" msprop:Generator_RowChangingName="departmansfiles_viewRowChanging" msprop:Generator_RowEvHandlerName="departmansfiles_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="departmansfiles_viewRowDeleted" msprop:Generator_UserTableName="departmansfiles_view" msprop:Generator_RowChangedName="departmansfiles_viewRowChanged" msprop:Generator_RowEvArgName="departmansfiles_viewRowChangeEvent" msprop:Generator_RowClassName="departmansfiles_viewRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="filename" msprop:Generator_ColumnVarNameInTable="columnfilename" msprop:Generator_ColumnPropNameInRow="filename" msprop:Generator_ColumnPropNameInTable="filenameColumn" msprop:Generator_UserColumnName="filename" minOccurs="0">
@@ -449,7 +453,7 @@ SELECT ID, description, keyword, date_, organization, creatby, creator, creation
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="empauth_view" msprop:Generator_TableClassName="empauth_viewDataTable" msprop:Generator_TableVarName="tableempauth_view" msprop:Generator_RowChangedName="empauth_viewRowChanged" msprop:Generator_TablePropName="empauth_view" msprop:Generator_RowDeletingName="empauth_viewRowDeleting" msprop:Generator_RowChangingName="empauth_viewRowChanging" msprop:Generator_RowEvHandlerName="empauth_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="empauth_viewRowDeleted" msprop:Generator_RowClassName="empauth_viewRow" msprop:Generator_UserTableName="empauth_view" msprop:Generator_RowEvArgName="empauth_viewRowChangeEvent">
+        <xs:element name="empauth_view" msprop:Generator_TableClassName="empauth_viewDataTable" msprop:Generator_TableVarName="tableempauth_view" msprop:Generator_TablePropName="empauth_view" msprop:Generator_RowDeletingName="empauth_viewRowDeleting" msprop:Generator_RowChangingName="empauth_viewRowChanging" msprop:Generator_RowEvHandlerName="empauth_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="empauth_viewRowDeleted" msprop:Generator_UserTableName="empauth_view" msprop:Generator_RowChangedName="empauth_viewRowChanged" msprop:Generator_RowEvArgName="empauth_viewRowChangeEvent" msprop:Generator_RowClassName="empauth_viewRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="realname" msprop:Generator_ColumnVarNameInTable="columnrealname" msprop:Generator_ColumnPropNameInRow="realname" msprop:Generator_ColumnPropNameInTable="realnameColumn" msprop:Generator_UserColumnName="realname" minOccurs="0">
@@ -498,7 +502,7 @@ SELECT ID, description, keyword, date_, organization, creatby, creator, creation
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="employee_view" msprop:Generator_TableClassName="employee_viewDataTable" msprop:Generator_TableVarName="tableemployee_view" msprop:Generator_RowChangedName="employee_viewRowChanged" msprop:Generator_TablePropName="employee_view" msprop:Generator_RowDeletingName="employee_viewRowDeleting" msprop:Generator_RowChangingName="employee_viewRowChanging" msprop:Generator_RowEvHandlerName="employee_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="employee_viewRowDeleted" msprop:Generator_RowClassName="employee_viewRow" msprop:Generator_UserTableName="employee_view" msprop:Generator_RowEvArgName="employee_viewRowChangeEvent">
+        <xs:element name="employee_view" msprop:Generator_TableClassName="employee_viewDataTable" msprop:Generator_TableVarName="tableemployee_view" msprop:Generator_TablePropName="employee_view" msprop:Generator_RowDeletingName="employee_viewRowDeleting" msprop:Generator_RowChangingName="employee_viewRowChanging" msprop:Generator_RowEvHandlerName="employee_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="employee_viewRowDeleted" msprop:Generator_UserTableName="employee_view" msprop:Generator_RowChangedName="employee_viewRowChanged" msprop:Generator_RowEvArgName="employee_viewRowChangeEvent" msprop:Generator_RowClassName="employee_viewRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="realname" msprop:Generator_ColumnVarNameInTable="columnrealname" msprop:Generator_ColumnPropNameInRow="realname" msprop:Generator_ColumnPropNameInTable="realnameColumn" msprop:Generator_UserColumnName="realname" minOccurs="0">
@@ -550,7 +554,7 @@ SELECT ID, description, keyword, date_, organization, creatby, creator, creation
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="interview_view" msprop:Generator_TableClassName="interview_viewDataTable" msprop:Generator_TableVarName="tableinterview_view" msprop:Generator_RowChangedName="interview_viewRowChanged" msprop:Generator_TablePropName="interview_view" msprop:Generator_RowDeletingName="interview_viewRowDeleting" msprop:Generator_RowChangingName="interview_viewRowChanging" msprop:Generator_RowEvHandlerName="interview_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="interview_viewRowDeleted" msprop:Generator_RowClassName="interview_viewRow" msprop:Generator_UserTableName="interview_view" msprop:Generator_RowEvArgName="interview_viewRowChangeEvent">
+        <xs:element name="interview_view" msprop:Generator_TableClassName="interview_viewDataTable" msprop:Generator_TableVarName="tableinterview_view" msprop:Generator_TablePropName="interview_view" msprop:Generator_RowDeletingName="interview_viewRowDeleting" msprop:Generator_RowChangingName="interview_viewRowChanging" msprop:Generator_RowEvHandlerName="interview_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="interview_viewRowDeleted" msprop:Generator_UserTableName="interview_view" msprop:Generator_RowChangedName="interview_viewRowChanged" msprop:Generator_RowEvArgName="interview_viewRowChangeEvent" msprop:Generator_RowClassName="interview_viewRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:long" />
@@ -568,14 +572,6 @@ SELECT ID, description, keyword, date_, organization, creatby, creator, creation
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="interviewer" msprop:Generator_ColumnVarNameInTable="columninterviewer" msprop:Generator_ColumnPropNameInRow="interviewer" msprop:Generator_ColumnPropNameInTable="interviewerColumn" msprop:Generator_UserColumnName="interviewer" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="result" msprop:Generator_ColumnVarNameInTable="columnresult" msprop:Generator_ColumnPropNameInRow="result" msprop:Generator_ColumnPropNameInTable="resultColumn" msprop:Generator_UserColumnName="result" type="xs:boolean" minOccurs="0" />
               <xs:element name="introductiontype" msprop:Generator_ColumnVarNameInTable="columnintroductiontype" msprop:Generator_ColumnPropNameInRow="introductiontype" msprop:Generator_ColumnPropNameInTable="introductiontypeColumn" msprop:Generator_UserColumnName="introductiontype" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -583,7 +579,6 @@ SELECT ID, description, keyword, date_, organization, creatby, creator, creation
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="training" msprop:Generator_ColumnVarNameInTable="columntraining" msprop:Generator_ColumnPropNameInRow="training" msprop:Generator_ColumnPropNameInTable="trainingColumn" msprop:Generator_UserColumnName="training" type="xs:boolean" minOccurs="0" />
               <xs:element name="training_date" msprop:Generator_ColumnVarNameInTable="columntraining_date" msprop:Generator_ColumnPropNameInRow="training_date" msprop:Generator_ColumnPropNameInTable="training_dateColumn" msprop:Generator_UserColumnName="training_date" type="xs:dateTime" minOccurs="0" />
               <xs:element name="position" msprop:Generator_ColumnVarNameInTable="columnposition" msprop:Generator_ColumnPropNameInRow="position" msprop:Generator_ColumnPropNameInTable="positionColumn" msprop:Generator_UserColumnName="position" minOccurs="0">
                 <xs:simpleType>
@@ -593,10 +588,35 @@ SELECT ID, description, keyword, date_, organization, creatby, creator, creation
                 </xs:simpleType>
               </xs:element>
               <xs:element name="interviewdate" msprop:Generator_ColumnVarNameInTable="columninterviewdate" msprop:Generator_ColumnPropNameInRow="interviewdate" msprop:Generator_ColumnPropNameInTable="interviewdateColumn" msprop:Generator_UserColumnName="interviewdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="interviewee_ref" msprop:Generator_ColumnVarNameInTable="columninterviewee_ref" msprop:Generator_ColumnPropNameInRow="interviewee_ref" msprop:Generator_ColumnPropNameInTable="interviewee_refColumn" msprop:Generator_UserColumnName="interviewee_ref" type="xs:long" minOccurs="0" />
+              <xs:element name="educational" msprop:Generator_ColumnVarNameInTable="columneducational" msprop:Generator_ColumnPropNameInRow="educational" msprop:Generator_ColumnPropNameInTable="educationalColumn" msprop:Generator_UserColumnName="educational" type="xs:boolean" minOccurs="0" />
+              <xs:element name="education_date" msprop:Generator_ColumnVarNameInTable="columneducation_date" msprop:Generator_ColumnPropNameInRow="education_date" msprop:Generator_ColumnPropNameInTable="education_dateColumn" msprop:Generator_UserColumnName="education_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="education_res" msprop:Generator_ColumnVarNameInTable="columneducation_res" msprop:Generator_ColumnPropNameInRow="education_res" msprop:Generator_ColumnPropNameInTable="education_resColumn" msprop:Generator_UserColumnName="education_res" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="trial" msprop:Generator_ColumnVarNameInTable="columntrial" msprop:Generator_ColumnPropNameInRow="trial" msprop:Generator_ColumnPropNameInTable="trialColumn" msprop:Generator_UserColumnName="trial" type="xs:boolean" minOccurs="0" />
+              <xs:element name="training_res" msprop:Generator_ColumnVarNameInTable="columntraining_res" msprop:Generator_ColumnPropNameInRow="training_res" msprop:Generator_ColumnPropNameInTable="training_resColumn" msprop:Generator_UserColumnName="training_res" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="knowledge_view" msprop:Generator_TableClassName="knowledge_viewDataTable" msprop:Generator_TableVarName="tableknowledge_view" msprop:Generator_RowChangedName="knowledge_viewRowChanged" msprop:Generator_TablePropName="knowledge_view" msprop:Generator_RowDeletingName="knowledge_viewRowDeleting" msprop:Generator_RowChangingName="knowledge_viewRowChanging" msprop:Generator_RowEvHandlerName="knowledge_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="knowledge_viewRowDeleted" msprop:Generator_RowClassName="knowledge_viewRow" msprop:Generator_UserTableName="knowledge_view" msprop:Generator_RowEvArgName="knowledge_viewRowChangeEvent">
+        <xs:element name="knowledge_view" msprop:Generator_TableClassName="knowledge_viewDataTable" msprop:Generator_TableVarName="tableknowledge_view" msprop:Generator_TablePropName="knowledge_view" msprop:Generator_RowDeletingName="knowledge_viewRowDeleting" msprop:Generator_RowChangingName="knowledge_viewRowChanging" msprop:Generator_RowEvHandlerName="knowledge_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="knowledge_viewRowDeleted" msprop:Generator_UserTableName="knowledge_view" msprop:Generator_RowChangedName="knowledge_viewRowChanged" msprop:Generator_RowEvArgName="knowledge_viewRowChangeEvent" msprop:Generator_RowClassName="knowledge_viewRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
@@ -663,7 +683,7 @@ SELECT ID, description, keyword, date_, organization, creatby, creator, creation
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="knowledgemanagment_view" msprop:Generator_TableClassName="knowledgemanagment_viewDataTable" msprop:Generator_TableVarName="tableknowledgemanagment_view" msprop:Generator_RowChangedName="knowledgemanagment_viewRowChanged" msprop:Generator_TablePropName="knowledgemanagment_view" msprop:Generator_RowDeletingName="knowledgemanagment_viewRowDeleting" msprop:Generator_RowChangingName="knowledgemanagment_viewRowChanging" msprop:Generator_RowEvHandlerName="knowledgemanagment_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="knowledgemanagment_viewRowDeleted" msprop:Generator_RowClassName="knowledgemanagment_viewRow" msprop:Generator_UserTableName="knowledgemanagment_view" msprop:Generator_RowEvArgName="knowledgemanagment_viewRowChangeEvent">
+        <xs:element name="knowledgemanagment_view" msprop:Generator_TableClassName="knowledgemanagment_viewDataTable" msprop:Generator_TableVarName="tableknowledgemanagment_view" msprop:Generator_TablePropName="knowledgemanagment_view" msprop:Generator_RowDeletingName="knowledgemanagment_viewRowDeleting" msprop:Generator_RowChangingName="knowledgemanagment_viewRowChanging" msprop:Generator_RowEvHandlerName="knowledgemanagment_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="knowledgemanagment_viewRowDeleted" msprop:Generator_UserTableName="knowledgemanagment_view" msprop:Generator_RowChangedName="knowledgemanagment_viewRowChanged" msprop:Generator_RowEvArgName="knowledgemanagment_viewRowChangeEvent" msprop:Generator_RowClassName="knowledgemanagment_viewRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
@@ -715,7 +735,7 @@ SELECT ID, description, keyword, date_, organization, creatby, creator, creation
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="letters_view" msprop:Generator_TableClassName="letters_viewDataTable" msprop:Generator_TableVarName="tableletters_view" msprop:Generator_RowChangedName="letters_viewRowChanged" msprop:Generator_TablePropName="letters_view" msprop:Generator_RowDeletingName="letters_viewRowDeleting" msprop:Generator_RowChangingName="letters_viewRowChanging" msprop:Generator_RowEvHandlerName="letters_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="letters_viewRowDeleted" msprop:Generator_RowClassName="letters_viewRow" msprop:Generator_UserTableName="letters_view" msprop:Generator_RowEvArgName="letters_viewRowChangeEvent">
+        <xs:element name="letters_view" msprop:Generator_TableClassName="letters_viewDataTable" msprop:Generator_TableVarName="tableletters_view" msprop:Generator_TablePropName="letters_view" msprop:Generator_RowDeletingName="letters_viewRowDeleting" msprop:Generator_RowChangingName="letters_viewRowChanging" msprop:Generator_RowEvHandlerName="letters_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="letters_viewRowDeleted" msprop:Generator_UserTableName="letters_view" msprop:Generator_RowChangedName="letters_viewRowChanged" msprop:Generator_RowEvArgName="letters_viewRowChangeEvent" msprop:Generator_RowClassName="letters_viewRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
@@ -759,7 +779,7 @@ SELECT ID, description, keyword, date_, organization, creatby, creator, creation
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="managers_view" msprop:Generator_TableClassName="managers_viewDataTable" msprop:Generator_TableVarName="tablemanagers_view" msprop:Generator_RowChangedName="managers_viewRowChanged" msprop:Generator_TablePropName="managers_view" msprop:Generator_RowDeletingName="managers_viewRowDeleting" msprop:Generator_RowChangingName="managers_viewRowChanging" msprop:Generator_RowEvHandlerName="managers_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="managers_viewRowDeleted" msprop:Generator_RowClassName="managers_viewRow" msprop:Generator_UserTableName="managers_view" msprop:Generator_RowEvArgName="managers_viewRowChangeEvent">
+        <xs:element name="managers_view" msprop:Generator_TableClassName="managers_viewDataTable" msprop:Generator_TableVarName="tablemanagers_view" msprop:Generator_TablePropName="managers_view" msprop:Generator_RowDeletingName="managers_viewRowDeleting" msprop:Generator_RowChangingName="managers_viewRowChanging" msprop:Generator_RowEvHandlerName="managers_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="managers_viewRowDeleted" msprop:Generator_UserTableName="managers_view" msprop:Generator_RowChangedName="managers_viewRowChanged" msprop:Generator_RowEvArgName="managers_viewRowChangeEvent" msprop:Generator_RowClassName="managers_viewRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="realname" msprop:Generator_ColumnVarNameInTable="columnrealname" msprop:Generator_ColumnPropNameInRow="realname" msprop:Generator_ColumnPropNameInTable="realnameColumn" msprop:Generator_UserColumnName="realname" minOccurs="0">
@@ -772,7 +792,7 @@ SELECT ID, description, keyword, date_, organization, creatby, creator, creation
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="userpass_view" msprop:Generator_TableClassName="userpass_viewDataTable" msprop:Generator_TableVarName="tableuserpass_view" msprop:Generator_RowChangedName="userpass_viewRowChanged" msprop:Generator_TablePropName="userpass_view" msprop:Generator_RowDeletingName="userpass_viewRowDeleting" msprop:Generator_RowChangingName="userpass_viewRowChanging" msprop:Generator_RowEvHandlerName="userpass_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="userpass_viewRowDeleted" msprop:Generator_RowClassName="userpass_viewRow" msprop:Generator_UserTableName="userpass_view" msprop:Generator_RowEvArgName="userpass_viewRowChangeEvent">
+        <xs:element name="userpass_view" msprop:Generator_TableClassName="userpass_viewDataTable" msprop:Generator_TableVarName="tableuserpass_view" msprop:Generator_TablePropName="userpass_view" msprop:Generator_RowDeletingName="userpass_viewRowDeleting" msprop:Generator_RowChangingName="userpass_viewRowChanging" msprop:Generator_RowEvHandlerName="userpass_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="userpass_viewRowDeleted" msprop:Generator_UserTableName="userpass_view" msprop:Generator_RowChangedName="userpass_viewRowChanged" msprop:Generator_RowEvArgName="userpass_viewRowChangeEvent" msprop:Generator_RowClassName="userpass_viewRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
@@ -801,7 +821,7 @@ SELECT ID, description, keyword, date_, organization, creatby, creator, creation
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="KnowledgeManagement" msprop:Generator_TableClassName="KnowledgeManagementDataTable" msprop:Generator_TableVarName="tableKnowledgeManagement" msprop:Generator_TablePropName="KnowledgeManagement" msprop:Generator_RowDeletingName="KnowledgeManagementRowDeleting" msprop:Generator_RowChangingName="KnowledgeManagementRowChanging" msprop:Generator_RowEvHandlerName="KnowledgeManagementRowChangeEventHandler" msprop:Generator_RowDeletedName="KnowledgeManagementRowDeleted" msprop:Generator_UserTableName="KnowledgeManagement" msprop:Generator_RowChangedName="KnowledgeManagementRowChanged" msprop:Generator_RowEvArgName="KnowledgeManagementRowChangeEvent" msprop:Generator_RowClassName="KnowledgeManagementRow">
+        <xs:element name="KnowledgeManagement" msprop:Generator_TableClassName="KnowledgeManagementDataTable" msprop:Generator_TableVarName="tableKnowledgeManagement" msprop:Generator_RowChangedName="KnowledgeManagementRowChanged" msprop:Generator_TablePropName="KnowledgeManagement" msprop:Generator_RowDeletingName="KnowledgeManagementRowDeleting" msprop:Generator_RowChangingName="KnowledgeManagementRowChanging" msprop:Generator_RowEvHandlerName="KnowledgeManagementRowChangeEventHandler" msprop:Generator_RowDeletedName="KnowledgeManagementRowDeleted" msprop:Generator_RowClassName="KnowledgeManagementRow" msprop:Generator_UserTableName="KnowledgeManagement" msprop:Generator_RowEvArgName="KnowledgeManagementRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
@@ -835,7 +855,7 @@ SELECT ID, description, keyword, date_, organization, creatby, creator, creation
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="license_view" msprop:Generator_TableClassName="license_viewDataTable" msprop:Generator_TableVarName="tablelicense_view" msprop:Generator_TablePropName="license_view" msprop:Generator_RowDeletingName="license_viewRowDeleting" msprop:Generator_RowChangingName="license_viewRowChanging" msprop:Generator_RowEvHandlerName="license_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="license_viewRowDeleted" msprop:Generator_UserTableName="license_view" msprop:Generator_RowChangedName="license_viewRowChanged" msprop:Generator_RowEvArgName="license_viewRowChangeEvent" msprop:Generator_RowClassName="license_viewRow">
+        <xs:element name="license_view" msprop:Generator_TableClassName="license_viewDataTable" msprop:Generator_TableVarName="tablelicense_view" msprop:Generator_RowChangedName="license_viewRowChanged" msprop:Generator_TablePropName="license_view" msprop:Generator_RowDeletingName="license_viewRowDeleting" msprop:Generator_RowChangingName="license_viewRowChanging" msprop:Generator_RowEvHandlerName="license_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="license_viewRowDeleted" msprop:Generator_RowClassName="license_viewRow" msprop:Generator_UserTableName="license_view" msprop:Generator_RowEvArgName="license_viewRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
@@ -860,7 +880,7 @@ SELECT ID, description, keyword, date_, organization, creatby, creator, creation
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Departmans" msprop:Generator_TableClassName="DepartmansDataTable" msprop:Generator_TableVarName="tableDepartmans" msprop:Generator_RowChangedName="DepartmansRowChanged" msprop:Generator_TablePropName="Departmans" msprop:Generator_RowDeletingName="DepartmansRowDeleting" msprop:Generator_RowChangingName="DepartmansRowChanging" msprop:Generator_RowEvHandlerName="DepartmansRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartmansRowDeleted" msprop:Generator_RowClassName="DepartmansRow" msprop:Generator_UserTableName="Departmans" msprop:Generator_RowEvArgName="DepartmansRowChangeEvent">
+        <xs:element name="Departmans" msprop:Generator_TableClassName="DepartmansDataTable" msprop:Generator_TableVarName="tableDepartmans" msprop:Generator_TablePropName="Departmans" msprop:Generator_RowDeletingName="DepartmansRowDeleting" msprop:Generator_RowChangingName="DepartmansRowChanging" msprop:Generator_RowEvHandlerName="DepartmansRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartmansRowDeleted" msprop:Generator_UserTableName="Departmans" msprop:Generator_RowChangedName="DepartmansRowChanged" msprop:Generator_RowEvArgName="DepartmansRowChangeEvent" msprop:Generator_RowClassName="DepartmansRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
@@ -873,7 +893,7 @@ SELECT ID, description, keyword, date_, organization, creatby, creator, creation
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vacation_view" msprop:Generator_TableClassName="vacation_viewDataTable" msprop:Generator_TableVarName="tablevacation_view" msprop:Generator_TablePropName="vacation_view" msprop:Generator_RowDeletingName="vacation_viewRowDeleting" msprop:Generator_RowChangingName="vacation_viewRowChanging" msprop:Generator_RowEvHandlerName="vacation_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="vacation_viewRowDeleted" msprop:Generator_UserTableName="vacation_view" msprop:Generator_RowChangedName="vacation_viewRowChanged" msprop:Generator_RowEvArgName="vacation_viewRowChangeEvent" msprop:Generator_RowClassName="vacation_viewRow">
+        <xs:element name="vacation_view" msprop:Generator_TableClassName="vacation_viewDataTable" msprop:Generator_TableVarName="tablevacation_view" msprop:Generator_RowChangedName="vacation_viewRowChanged" msprop:Generator_TablePropName="vacation_view" msprop:Generator_RowDeletingName="vacation_viewRowDeleting" msprop:Generator_RowChangingName="vacation_viewRowChanging" msprop:Generator_RowEvHandlerName="vacation_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="vacation_viewRowDeleted" msprop:Generator_RowClassName="vacation_viewRow" msprop:Generator_UserTableName="vacation_view" msprop:Generator_RowEvArgName="vacation_viewRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
