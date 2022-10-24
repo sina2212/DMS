@@ -51,7 +51,6 @@ namespace DMS_Beta.Controllers
             p = new SqlParameter("@interviewer", SqlDbType.NVarChar, 50);
             p.Value = interviewer.Name;
             parameters.Add(p);
-            return null;
 
             p = new SqlParameter("@ret", SqlDbType.NVarChar, 50);
             p.Direction = ParameterDirection.Output;

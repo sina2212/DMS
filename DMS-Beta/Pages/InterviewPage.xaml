@@ -56,13 +56,14 @@
                         </DataGridCheckBoxColumn.ElementStyle>
                     </DataGridCheckBoxColumn>
                     <DataGridTextColumn x:Name="resultColumn" Width="Auto" Header="نتیجه" Binding="{Binding education_res}"/>
-                    <DataGridTextColumn x:Name="educationdate" Width="Auto" Header="تاریخ دوره آموزشی" Binding="{Binding education_date}">
+                    <materialdesign:DataGridTextColumn x:Name="educationdate" Width="Auto" Header="تاریخ دوره آموزشی" Binding="{Binding education_date}">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
-                                <Setter Property="FlowDirection" Value="LeftToRight"/>
+                                <Setter Property="TextAlignment" Value="Left"/>
+                                <Setter Property="MaxWidth" Value="70"/>
                             </Style>
                         </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
+                    </materialdesign:DataGridTextColumn>
                     <!--#endregion-->
                     <!--#region trial-->
                     <DataGridCheckBoxColumn x:Name="trial" Width="SizeToHeader" Header="آزمایشی" Binding="{Binding trial}">
@@ -78,7 +79,8 @@
                     <DataGridTextColumn x:Name="trainingdate" Width="Auto" Header="تاریخ دوره آزمایشی" Binding="{Binding training_date}">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
-                                <Setter Property="FlowDirection" Value="LeftToRight"/>
+                                <Setter Property="TextAlignment" Value="Left"/>
+                                <Setter Property="MaxWidth" Value="70"/>
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
@@ -89,6 +91,7 @@
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="TextAlignment" Value="Left"/>
+                                <Setter Property="MaxWidth" Value="70"/>
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>

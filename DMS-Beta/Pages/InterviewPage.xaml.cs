@@ -57,7 +57,6 @@ namespace DMS_Beta.Pages
             
             try
             {
-                #region Show All Interviews information except interviewers
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "select * from interview_view";
                 dt = new DataTable();
@@ -74,27 +73,6 @@ namespace DMS_Beta.Pages
                     rowView.EndEdit();
                     PFdata.Items.Refresh();
                 }
-                #endregion
-
-                for (int i = 0; i < PFdata.Items.Count; i++)
-                {
-                    DataRowView rowView = (PFdata.Items[i] as DataRowView);
-                    int iref = int.Parse((PFdata.Items[i] as DataRowView).Row.ItemArray[0].ToString());
-                    cmd.Connection = con;
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "select interviewer from InterviewItem where interviewref = 1";
-                    dt = new DataTable();
-                    SqlDataReader dr2 = cmd.ExecuteReader();
-                    dt.Load(dr2);
-                    for (int j = 0; j < dt.Rows.Count; j++)
-                    {
-                        rowView.BeginEdit();
-                        //rowView[3] += dt.Rows[j].ToString() + "-";
-                        
-                        rowView.EndEdit();
-                        PFdata.Items.Refresh();
-                    }
-                }
             }
             catch (SqlException ex)
             {
@@ -105,13 +83,23 @@ namespace DMS_Beta.Pages
 
         private void Rowselect(object sender, System.Windows.Input.MouseButtonEventArgs e)//select a interview to show
         {
+            #region get the cell's value of the specefic row
             var cellInfo = new DataGridCellInfo(PFdata.CurrentItem, PFdata.Columns[0]);
             var cellContent = cellInfo.Column.GetCellContent(cellInfo.Item);
             DataGridCell cell = (DataGridCell)cellContent.Parent;
             string index = ((TextBlock)cell.Content).Text;
+            #endregion
+            DataRowView rowView = (PFdata.CurrentItem as DataRowView);
             InterviewWindow window = new InterviewWindow(Int64.Parse(index), "load", Creator);
             window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             window.ShowDialog();
+            rowView.BeginEdit();
+            if (window.isOpend == false)
+            {
+                rowView.EndEdit();
+                PFdata.Items.Refresh();
+            }
+            InterviewLoad(sender, e);
         }
 
         private void SearchInterview(object sender, RoutedEventArgs e)//serach for a specefic interview

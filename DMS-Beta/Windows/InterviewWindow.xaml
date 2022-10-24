@@ -19,10 +19,12 @@
             <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Right" FlowDirection="RightToLeft">
                 <Button Click="Close" BorderThickness="0" Background="Red" materialdesign:ButtonAssist.CornerRadius="10"
                     Height="20" Width="20" Grid.Row="0" Margin="5"/>
-                <Label HorizontalContentAlignment="Left" Margin="660 0 0 0" HorizontalAlignment="Right" FontSize="18" Foreground="Black" Content="مصاحبه: "/>
+                <Rectangle Width="670" Height="Auto" Fill="White" MouseLeftButtonDown="Move"/>
+                <Label HorizontalContentAlignment="Left" Margin="0 0 0 0" HorizontalAlignment="Right" FontSize="18" Foreground="Black" Content="مصاحبه: "/>
                 <Label x:Name="code" HorizontalContentAlignment="Left" Margin="0 0 0 0" HorizontalAlignment="Right" FontSize="18" Foreground="Black"/>
             </StackPanel>
             <!--#endregion-->
+            
             <dragablz:TabablzControl x:Name="tabControl" Grid.Row="1" FontSize="17" FlowDirection="RightToLeft" >
                 <TabItem Header="مشخصات مصاحبه" Background="DodgerBlue" Grid.Row="1">
                     <Grid Background="Transparent">
@@ -96,6 +98,7 @@
                 <TabItem Header="نتیجه و قرارداد" Background="DodgerBlue" Grid.Row="1">
                     <Grid>
                         <StackPanel Orientation="Vertical">
+                            <!--#region interviewers adding lablel and button-->
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0 30 0 0">
                                 <TextBlock Text="مصاحبه کنندگان" Margin="20 0 10 0" FontSize="18" />
                                 <Button Height="30" Width="30" BorderThickness="0" Background="#FF008BFF" Style="{StaticResource MaterialDesignIconButton}" Click="SaveInterviewer">
@@ -104,26 +107,16 @@
                                     </Button.Content>
                                 </Button>
                             </StackPanel>
+                            <!--#endregion-->
                             <Border Margin="10" CornerRadius="5" BorderThickness="1" BorderBrush="Black">
                                 <DataGrid HorizontalAlignment="Left" Height="150" Width="auto" ColumnWidth="100"
-                                    x:Name="interviewerstable" VerticalAlignment="Top" RowHeight="38" IsReadOnly="False">
+                                    x:Name="interviewerstable" VerticalAlignment="Top" RowHeight="38" IsReadOnly="True">
                                     <DataGrid.Columns>
-                                        <DataGridTextColumn x:Name="interviewersmname" Width="Auto" Header="نام مصاحبه کننده" Binding="{Binding Name}" IsReadOnly="True"/>
-                                        <DataGridTextColumn x:Name="comment" Width="SizeToHeader" Header="نظر" Binding="{Binding Result}" IsReadOnly="False"/>
-                                        <DataGridTextColumn x:Name="intro" Width="Auto" Header="توضیحات" Binding="{Binding Comment}" IsReadOnly="False"/>
-                                        <DataGridTemplateColumn x:Name="Edite" Width="Auto" Header="Edite">
-                                            <DataGridTemplateColumn.CellTemplate>
-                                                <DataTemplate>
-                                                    <Button Height="20" Width="20" BorderThickness="0" Click="EditeInterviewer"
-                                                        Style="{StaticResource MaterialDesignIconButton}">
-                                                        <Button.Content>
-                                                            <materialdesign:PackIcon Kind="Edit" Height="20" Width="20" Foreground="#FF0080FF"/>
-                                                        </Button.Content>
-                                                    </Button>
-                                                </DataTemplate>
-                                            </DataGridTemplateColumn.CellTemplate>
-                                        </DataGridTemplateColumn>
-                                        <DataGridTemplateColumn x:Name="Delete" Width="Auto" Header="Delete">
+                                        <DataGridTextColumn x:Name="interviewersmname" Width="Auto" Header="نام مصاحبه کننده" Binding="{Binding Name}"/>
+                                        <DataGridTextColumn x:Name="comment" Width="SizeToHeader" Header="نظر" Binding="{Binding Result}"/>
+                                        <DataGridTextColumn x:Name="intro" Width="Auto" Header="توضیحات" Binding="{Binding Comment}"/>
+                                        <!--#region Delete Button-->
+                                        <DataGridTemplateColumn x:Name="Delete" Width="Auto">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
                                                     <Button Height="20" Width="20" BorderThickness="0" Click="DeleteInterviewer"
@@ -135,10 +128,12 @@
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
+                                        <!--#endregion-->
                                     </DataGrid.Columns>
                                 </DataGrid>
                             </Border>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0 15 0 0">
+                                <!--#region have trial for interview-->
                                 <CheckBox x:Name="trial" Content="آزمایشی" Margin="20 0 0 0" Checked="checkchange1" Unchecked="checkchange1"/>
                                 <Border BorderThickness="2" Height="35" BorderBrush="Gray" CornerRadius="17" Margin="5 0 0 0">
                                     <pcd:PersianDatePicker IsEnabled="False" FontSize="14" ToolTip="تاریخ مصاحبه" x:Name="trainingdate" BorderThickness="0" Margin="0 0 10 0"/>
@@ -147,6 +142,8 @@
                                     <TextBox IsEnabled="False" x:Name="result1" Width="120" materialdesign:HintAssist.Hint="نتیجه" Margin="10 0 0 0" TextAlignment="Center"
                                         FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
                                 </Border>
+                                <!--#endregion-->
+                                <!--#region educational-->
                                 <CheckBox x:Name="educational" Content="آموزشی" Margin="40 0 0 0" Checked="checkchange2" Unchecked="checkchange2"/>
                                 <Border BorderThickness="2" Height="35" BorderBrush="Gray" CornerRadius="17" Margin="10 0 0 0">
                                     <pcd:PersianDatePicker IsEnabled="False" FontSize="14" ToolTip="تاریخ مصاحبه" x:Name="educationdate" BorderThickness="0" Margin="0 0 10 0"/>
@@ -155,14 +152,13 @@
                                     <TextBox IsEnabled="False" x:Name="result2" Width="120" materialdesign:HintAssist.Hint="نتیجه" Margin="10 0 0 0" TextAlignment="Center"
                                         FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
                                 </Border>
+                                <!--#endregion-->
                             </StackPanel>
                             <Button x:Name="InterviewItem" Content="ذخیره" Margin="0 20 40 0" FontSize="18" VerticalAlignment="Bottom"
                                 HorizontalAlignment="Right" materialdesign:ButtonAssist.CornerRadius="5"
                                 Background="ForestGreen" BorderThickness="0" Height="35" Width="100" Click="SaveInterviewItem"/>
                         </StackPanel>
-                        <StackPanel x:Name="childstack" LayoutUpdated="layoutupdate">
-
-                        </StackPanel>
+                        <StackPanel x:Name="childstack" LayoutUpdated="layoutupdate"/>
                     </Grid>
                 </TabItem>
             </dragablz:TabablzControl>

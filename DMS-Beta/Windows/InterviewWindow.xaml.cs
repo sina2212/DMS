@@ -23,6 +23,7 @@ namespace DMS_Beta.Windows
     public partial class InterviewWindow : Window
     {
         #region variables
+        public bool isOpend { get; set; }
         private Int64 interviewid;
         private string function;
         private int code_;//emp code. used fro crud function in DB
@@ -54,13 +55,15 @@ namespace DMS_Beta.Windows
             Function = f;
             INterviewID = id;
             Code = emp;
+            isOpend = true;
         }
 
         public void Close(object sender, RoutedEventArgs e)
         {
             this.Close();
+            isOpend = false;
         }
-        private void combo3_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void combo3_SelectionChanged(object sender, SelectionChangedEventArgs e)//change the discription type
         {
             if (combo3.SelectedIndex == 2)
             {
@@ -438,12 +441,7 @@ namespace DMS_Beta.Windows
                 InterviewItem.IsEnabled = true;
             }
         }
-
-        private void EditeInterviewer(object sender, RoutedEventArgs e)//Edite a row from interviewtable
-        {
-            MessageBox.Show(INterviewID.ToString());
-        }
-
+        
         private void DeleteInterviewer(object sender, RoutedEventArgs e)//delete a row from interviewtable
         {
             var cellInfo = new DataGridCellInfo(interviewerstable.CurrentItem, interviewerstable.Columns[0]);
@@ -468,6 +466,11 @@ namespace DMS_Beta.Windows
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void Move(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
 
         #region Function's
