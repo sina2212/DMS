@@ -14,20 +14,22 @@ namespace DMS_Beta.Pages
     /// </summary>
     public partial class InterviewPage : Page
     {
+        #region variables
         DataTable dt = new DataTable();
-        private int creator;
-
-        public int Creator
-        {
-            get { return creator; }
-            set { creator = value; }
-        }
-
+        public int Creator { get; set; }
+        public bool a_edu { get; set; }
+        public bool a_trial { get; set; }
+        public bool bydate { get; set; }
+        public bool interviewee { get; set; }
+        public bool interviewer { get; set; }
+        public List<string> filters { get; set; }
         public InterviewPage(int emp)
         {
             InitializeComponent();
             Creator = emp;
         }
+        #endregion
+
         public void NewInterview(object sender, RoutedEventArgs e)
         {
             InterviewWindow window = new InterviewWindow(0, "new", Creator);
@@ -110,22 +112,32 @@ namespace DMS_Beta.Pages
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 invsid.Add(Int64.Parse(dt.Rows[i][0].ToString()));
-                invsname.Add(dt.Rows[i][1].ToString());
+                invsname.Add(dt.Rows[i][2].ToString());
             }
-            for (int i = 0; i < invsid.Count; i++)
+            for (int i = 0; i < filters.Count; i++)
             {
-                if (invsname[i].ToString().Contains(searchtxt.Text))
+                for (int j = 0; j < PFdata.Items.Count; j++)
                 {
-                    InterviewWindow window = new InterviewWindow(invsid[i], "load", int.Parse(dt.Rows[0][0].ToString()));
-                    window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                    window.ShowDialog();
-                    flag = true;
+                    if (true)
+                    {
+                        //todo: search the item
+                    }
                 }
             }
-            if (flag==false)
-            {
-                MessageBox.Show("مصاحبه ایی مربوط به این شخص پیدا نشد");
-            }
+            //for (int i = 0; i < invsid.Count; i++)
+            //{
+            //    if (invsname[i].ToString().Contains(searchtxt.Text) == true)
+            //    {
+            //        InterviewWindow window = new InterviewWindow(invsid[i], "load", int.Parse(dt.Rows[0][0].ToString()));
+            //        window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            //        window.ShowDialog();
+            //        flag = true;
+            //    }
+            //}
+            //if (flag==false)
+            //{
+            //    MessageBox.Show("مصاحبه ایی مربوط به این شخص پیدا نشد");
+            //}
         }
         
         private void changedate(int i, int j, DataRowView rowView)//convert datetime fo grid to shamsi
@@ -137,5 +149,60 @@ namespace DMS_Beta.Pages
                 rowView[j] = pc.GetYear(date).ToString() + "/" + pc.GetMonth(date).ToString() + "/" + pc.GetDayOfMonth(date).ToString();
             }
         }
+
+        #region set how to filter
+        private void activeeducation(object sender, RoutedEventArgs e)
+        {
+            a_edu = true;
+            filters.Add("آموزشی");
+        }
+        private void diactiveeducation(object sender, RoutedEventArgs e)
+        {
+            a_edu = false;
+            filters.Remove("آموزشی");
+        }
+        private void activetrial(object sender, RoutedEventArgs e)
+        {
+            a_trial = true;
+            filters.Add("آزمایشی");
+        }
+        private void diactivetrial(object sender, RoutedEventArgs e)
+        {
+            a_trial = false;
+            filters.Remove("آزمایشی");
+        }
+        private void activedate(object sender, RoutedEventArgs e)
+        {
+            bydate = true;
+            filters.Add("تاریخ");
+            //todo: show the duration
+        }
+        private void diactivedate(object sender, RoutedEventArgs e)
+        {
+            bydate = false;
+            filters.Remove("تاریخ");
+            //todo: hide the duration
+        }
+        private void activeinterviewer(object sender, RoutedEventArgs e)
+        {
+            interviewer = true;
+            filters.Add("مصاحبه کنندگان");
+        }
+        private void diactiveinterviewer(object sender, RoutedEventArgs e)
+        {
+            interviewer = false;
+            filters.Remove("مصاحبه کنندگان");
+        }
+        private void activeinterviewee(object sender, RoutedEventArgs e)
+        {
+            interviewee = true;
+            filters.Add("نام و نام خانوادگی");
+        }
+        private void diactiveinterviewee(object sender, RoutedEventArgs e)
+        {
+            interviewee = false;
+            filters.Remove("نام و نام خانوادگی");
+        } 
+        #endregion
     }
 }

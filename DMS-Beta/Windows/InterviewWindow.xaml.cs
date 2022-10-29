@@ -167,7 +167,18 @@ namespace DMS_Beta.Windows
                     DataSet ds = new DataSet();
                     ds.Tables.Add(res);
                     code.Content += ds.Tables[0].Rows[0][0].ToString();
-                    combo3.Text = ds.Tables[0].Rows[0][1].ToString();
+                    #region description
+                    if (ds.Tables[0].Rows[0][1].ToString().Contains("سایر") == true)
+                    {
+                        description.Visibility = Visibility.Visible;
+                        descriptiontxt.Text = ds.Tables[0].Rows[0][1].ToString().Substring(5);
+                        combo3.SelectedIndex = 2;
+                    }
+                    else
+                    {
+                        combo3.Text = ds.Tables[0].Rows[0][1].ToString();
+                    } 
+                    #endregion
                     position.Text = ds.Tables[0].Rows[0][2].ToString();
                     DateTime dt = DateTime.Parse(ds.Tables[0].Rows[0][3].ToString());
                     PersianCalendar pc = new PersianCalendar();
@@ -176,7 +187,7 @@ namespace DMS_Beta.Windows
                     education.Text = ds.Tables[0].Rows[0][11].ToString();
                     nationalcode.Text = ds.Tables[0].Rows[0][12].ToString();
                     phonenumber.Text = ds.Tables[0].Rows[0][13].ToString();
-                    if (ds.Tables[0].Rows[0][4].ToString() == "True")
+                    if (ds.Tables[0].Rows[0][4].ToString() == "True")//trial
                     {
                         trial.SetCurrentValue(CheckBox.IsCheckedProperty, true);
                         dt = new DateTime();
@@ -184,7 +195,7 @@ namespace DMS_Beta.Windows
                         trainingdate.Text = pc.GetYear(dt).ToString() + "/" + pc.GetMonth(dt).ToString() + "/" + pc.GetDayOfMonth(dt).ToString();
                         result1.Text = ds.Tables[0].Rows[0][6].ToString();
                     }
-                    if (ds.Tables[0].Rows[0][7].ToString() == "True")
+                    if (ds.Tables[0].Rows[0][7].ToString() == "True")//educational
                     {
                         educational.SetCurrentValue(CheckBox.IsCheckedProperty, true);
                         dt = new DateTime();

@@ -33,16 +33,16 @@
                             <StackPanel Margin="15 40 0 0" Orientation="Horizontal" HorizontalAlignment="Center">
                                 <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Margin="15 0 0 0">
                                     <TextBox Name="fullname" materialdesign:HintAssist.Hint="نام و نام خانوادگی" Margin="10 0 0 0"
-                                        TextAlignment="Center" FontSize="20" Width="200" ToolTip="نام و نام خانوادگی"
+                                        TextAlignment="Center" FontSize="20" Width="200" ToolTip="نام و نام خانوادگی" ToolTipService.Placement="Top"
                                         BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
                                 </Border>
                                 <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Margin="15 0 0 0">
                                     <TextBox Width="200" x:Name="nationalcode" materialdesign:HintAssist.Hint="کد ملی" Margin="10 0 0 0" TextAlignment="Center"
-                                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden" ToolTip="کد ملی"/>
+                                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden" ToolTip="کد ملی" ToolTipService.Placement="Top"/>
                                 </Border>
                                 <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Margin="15 0 0 0">
                                     <TextBox x:Name="phonenumber" Width="200" materialdesign:HintAssist.Hint="شماره تماس" Margin="10 0 0 0" TextAlignment="Center"
-                                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden" ToolTip="شماره تماس"/>
+                                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden" ToolTip="شماره تماس" ToolTipService.Placement="Top"/>
                                 </Border>
                             </StackPanel>
                             <!--#endregion-->
@@ -51,14 +51,14 @@
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40" Margin="0 30 0 0">
                                 <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20">
                                     <TextBox Width="200" x:Name="position" materialdesign:HintAssist.Hint="عنوان شغلی" Margin="10 0 0 0" TextAlignment="Center"
-                                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden" ToolTip="عنوان شغلی"/>
+                                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden" ToolTip="عنوان شغلی" ToolTipService.Placement="Top"/>
                                 </Border>
                                 <Border BorderThickness="2" BorderBrush="Gray" CornerRadius="20" Margin="20 0 0 0">
-                                    <pcd:PersianDatePicker FontSize="14" ToolTip="تاریخ مصاحبه" x:Name="date" BorderThickness="0" Margin="0 0 10 0"/>
+                                    <pcd:PersianDatePicker FontSize="14" ToolTip="تاریخ مصاحبه" x:Name="date" BorderThickness="0" Margin="0 0 10 0" ToolTipService.Placement="Top"/>
                                 </Border>
                                 <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Margin="20 0 0 0" Grid.Row="6" Width="200" HorizontalAlignment="Right">
                                     <TextBox x:Name="education" materialdesign:HintAssist.Hint="آخرین مدرک تحصیلی" Margin="10 0 0 0" TextAlignment="Center"
-                                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden" ToolTip="مدرک تحصیلی"/>
+                                    FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden" ToolTip="مدرک تحصیلی" ToolTipService.Placement="Top"/>
                                 </Border>
                                 <TextBlock Text="رزومه" Margin="20 0 10 0" FontSize="18" MouseLeftButtonDown="showattachments"/>
                                 <Button Height="30" Width="30" BorderThickness="0" Background="#FF008BFF" Style="{StaticResource MaterialDesignIconButton}" Click="Add">
@@ -74,7 +74,7 @@
                                 <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
                                     <Border VerticalAlignment="Top" BorderThickness="1" CornerRadius="5" Height="35" BorderBrush="Gray">
                                         <ComboBox x:Name="combo3" materialdesign:HintAssist.Hint="نحوه آشنایی با سازمان" ToolTip="نحوه آشنایی"
-                                        FontSize="18" Width="195" Margin="5 0 5 0" SelectionChanged="combo3_SelectionChanged">
+                                        FontSize="18" Width="195" Margin="5 0 5 0" SelectionChanged="combo3_SelectionChanged" ToolTipService.Placement="Top">
                                             <ComboBoxItem Content="کارکنان"/>
                                             <ComboBoxItem Content="آگهی"/>
                                             <ComboBoxItem Content="سایر"/>
@@ -84,7 +84,7 @@
                                 <Border x:Name="description" BorderThickness="1" BorderBrush="Gray" CornerRadius="20" Margin="10 0 0 0" Visibility="Hidden">
                                     <TextBox Width="500" Height="100" materialdesign:HintAssist.Hint="توضیحات" Margin="10 0 0 0"
                                     TextAlignment="Center" TextWrapping="Wrap" AcceptsReturn="True" FontSize="20" x:Name="descriptiontxt"
-                                    BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
+                                    BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden" ToolTipService.Placement="Top"/>
                                 </Border>
                             </StackPanel>
                             <!--#endregion-->

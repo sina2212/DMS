@@ -5,6 +5,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DMS_Beta.Pages"
+      xmlns:eo="http://schemas.essentialobjects.com/wpf/"
       xmlns:DMS_Beta="clr-namespace:DMS_Beta" xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="DMS_Beta.Pages.InterviewPage"
       mc:Ignorable="d" Background="White" Loaded="InterviewLoad"
       d:DesignHeight="450" d:DesignWidth="800"
@@ -20,12 +21,21 @@
             <RowDefinition Height="70"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right"
-            VerticalAlignment="Center" Margin="10">
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10">
             <Button Height="40" Width="40" Margin="0 0 10 0" materialdesign:ButtonAssist.CornerRadius="20" Click="SearchInterview"
                 BorderThickness="0" Background="#FF008BFF" Style="{StaticResource MaterialDesignIconButton}">
                 <materialdesign:PackIcon Kind="Search" Foreground="White"/>
             </Button>
+            <Border BorderThickness="1" Margin="0 0 10 0" CornerRadius="5" BorderBrush="Gray">
+                <ComboBox Name="filtering" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="2,2,6,0" Width="160" 
+                    materialdesign:HintAssist.Hint="فیلتر کردن" FontSize="16" Foreground="Black" HorizontalContentAlignment="Right">
+                    <CheckBox x:Name="a_education" Checked="activeeducation" Unchecked="diactiveeducation" Content="آموزشی"/>
+                    <CheckBox x:Name="a_trial_" Checked="activetrial" Unchecked="diactivetrial" Content="آزمایشی"/>
+                    <CheckBox x:Name="a_date" Checked="activedate" Unchecked="diactivedate" Content="تاریخ"/>
+                    <CheckBox x:Name="a_interviewer" Checked="activeinterviewer" Unchecked="diactiveinterviewer" Content="مصاحبه کننده"/>
+                    <CheckBox x:Name="a_person" Checked="activeinterviewee" Unchecked="diactiveinterviewee" Content="نام و نام خانوادگی"/>
+                </ComboBox>
+            </Border>
             <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="20">
                 <TextBox Width="200" materialdesign:HintAssist.Hint=" Sarch ..." Margin="8 0 0 0" x:Name="searchtxt"
                     FontSize="20" BorderThickness="0" materialdesign:TextFieldAssist.DecorationVisibility="Hidden"/>
